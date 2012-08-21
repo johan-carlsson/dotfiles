@@ -33,8 +33,9 @@ plugins=(git ruby rails vi-mode history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/johan/bin:/opt/local/lib/postgresql82/bin:/Users/johan/.rvm/bin
+# Store your user paths in ~/.paths
+source ~/.paths
+#export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/johan/bin:/opt/local/lib/postgresql82/bin:/Users/johan/.rvm/bin
 
 #Vi-mode 
 bindkey -M viins 'jj' vi-cmd-mode

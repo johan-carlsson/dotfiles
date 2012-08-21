@@ -15,6 +15,8 @@ ln -s ~/Dropbox/dotfiles/zsh/oh-my-zsh ~/.oh-my-zsh
 ln -s ~/Dropbox/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/Dropbox/dotfiles/zsh/custom ~/.oh-my-zsh/custom
 ```
+Add your custom local paths to ~/.paths 
+
 
 ###Set zsh as your default shell:
 ```
