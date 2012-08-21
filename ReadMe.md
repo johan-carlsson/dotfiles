@@ -21,7 +21,10 @@ ln -s ~/Dropbox/dotfiles/zsh/custom ~/.oh-my-zsh/custom
 chsh -s /bin/zsh
 ```
 
-
+###Install tmux.conf
+```
+ln -s ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
+```
 ###Install Svengelska keyboard layout
 ###Note ln does not work use cp
 ```
