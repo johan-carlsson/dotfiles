@@ -1,3 +1,24 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "vim/bundle/gundo"]
+	path = vim/bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git
+[submodule "vim/bundle/msanders-snipmate.vim"]
+	path = vim/bundle/msanders-snipmate.vim
+	url = http://github.com/msanders/snipmate.vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/tpope-vim-ragtag"]
+	path = vim/bundle/tpope-vim-ragtag
+	url = http://github.com/tpope/vim-ragtag.git
+[submodule "vim/bundle/tpope-vim-rails"]
+	path = vim/bundle/tpope-vim-rails
+	url = http://github.com/tpope/vim-rails.git
+[submodule "vim/bundle_old/tpope-vim-surround"]
+	path = vim/bundle_old/tpope-vim-surround
+	url = http://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/tpope-vim-surround"]
+	path = vim/bundle/tpope-vim-surround
+	url = http://github.com/tpope/vim-surround.git
