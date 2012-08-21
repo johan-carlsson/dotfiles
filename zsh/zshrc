@@ -40,4 +40,13 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/joh
 bindkey -M viins 'jj' vi-cmd-mode
 bindkey -M viins ';;' vi-cmd-mode
 
+#Bash favorite bindings
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
+#bindkey '^r' history-incremental-search-backward
+bindkey '^a' beginning-of-line 
+bindkey '^e' end-of-line 
+bindkey '^k' kill-line
+
 export LANG=sv_SE.UTF-8
+
