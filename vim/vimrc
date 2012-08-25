@@ -50,7 +50,8 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Or use vividchalk
-colorscheme topfunky-light
+"colorscheme topfunky-light
+colorscheme johan
 syntax enable
 "set background=light
 "colorscheme solarized
@@ -88,11 +89,29 @@ autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 nnoremap <CR> :noh<CR><CR>
 "Undo tree plugin
 nnoremap <F5> :GundoToggle<CR>
+"Bufferexplorer
+"noremap <F4> :BufExplorer<CR>
 "NerdTree plugin
-nnoremap <F4> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
+let NERDTreeChDirMode=2
+let NERDTreeIgnore = ['^target$','\.iml$']
 "Remapping the esc key
 ino jj <esc>
 cno jj <c-c>
 "vno v <esc>
 ino ;; <esc>
 cno ;; <c-c>
+
+"FuzzyFinderTextMate
+"let g:fuf_file_exclude = '\v\~$|\.o$|\.exe$|\.bak$|\.swp|\.class$|^target$'
+"let g:fuzzy_ignore = "target/*"
+let g:fuzzy_ignore = "*/target/*;target/*;target;*.iml"
+nmap <leader>r :FuzzyFinderTextMateRefreshFiles<CR>
+
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+command! Xmllint  :%!xmllint --format --recover -
+
+"Autosave/Read
+au FocusLost * silent! wa
+set autowrite
+set autoread
