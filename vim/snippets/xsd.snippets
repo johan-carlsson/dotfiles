@@ -1,0 +1,43 @@
+snippet e 
+	<xsd:element maxOccurs="1" minOccurs="1" name="${1:name}">${2}</xsd:element>
+	${3}
+snippet et 
+	<xsd:element maxOccurs="1" minOccurs="1" name="${1:name}" type="${2:type}">${3}</xsd:element>
+	${4}
+snippet er 
+	<xsd:element maxOccurs="1" minOccurs="1" name="${1:name}" ref="${2:ref}">${3}</xsd:element>
+	${4}
+snippet c
+	  <xsd:complexType name="${1:name}">
+			${2}
+		</xsd:complexType>
+snippet s
+	<xsd:schema elementFormDefault="qualified" jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0"
+	targetNamespace="http://${1:targetNamespace}" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	${2}
+	<xsd:schema>
+snippet se
+	<xsd:sequence>
+		${r1}
+	</xsd:sequence>
+snippet si
+	<xsd:simpleType name="${1:name}">
+		${2}
+	</xsd:simpleType>
+snippet r
+	<xsd:restriction base="${1:base}">
+		${2}
+	</xsd:simpleType>
+snippet p
+	<xsd:pattern value="${1:value}">
+	${2}
+snippet i
+	<xsd:import namespace="${1:namespace}" schemaLocation="${2:schemaLocation}/>
+	${3}
+snippet a
+	<xsd:annotation>
+		${1}
+	</xsd:annotation>
+snippet d
+	<xsd:documentation>${1}</xsd:documenation>
+	${2}
