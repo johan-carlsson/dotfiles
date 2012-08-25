@@ -2,7 +2,7 @@
 Delete or move old .vim and .vimrc first
 
 ```
-ln -s ~/Dropbox/dotfiles/vim ~/.vim
+ln -s ~/Dropbox/dotfiles/vim/ ~/.vim
 ln -s ~/Dropbox/dotfiles/vim/vimrc ~/.vimrc
 ln -s ~/Dropbox/dotfiles/vim/gvimrc ~/.gvimrc
 ```
@@ -11,9 +11,8 @@ ln -s ~/Dropbox/dotfiles/vim/gvimrc ~/.gvimrc
 Delete or move old .oh-my-zsh and .zshrc first
 
 ```
-ln -s ~/Dropbox/dotfiles/zsh/oh-my-zsh ~/.oh-my-zsh
+ln -s ~/Dropbox/dotfiles/zsh/oh-my-zsh/ ~/.oh-my-zsh
 ln -s ~/Dropbox/dotfiles/zsh/zshrc ~/.zshrc
-ln -s ~/Dropbox/dotfiles/zsh/custom ~/.oh-my-zsh/custom
 ```
 Add your custom local paths to ~/.paths 
 
@@ -33,3 +32,12 @@ ln -s ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
 cp -r ~/Dropbox/dotfiles/osx/Svengelska.bundle ~/Library/Keyboard\ Layouts/Svengelska.bundle
 ```
 
+###Fetch git submodules
+```
+git submodule init
+git submodule update
+```
+If your behinde a proxy you might have to do:
+```
+env GIT_SSL_NO_VERIFY=true git submodule update
+```
