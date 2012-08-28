@@ -22,3 +22,6 @@
 [submodule "vim/bundle/tpope-vim-surround"]
 	path = vim/bundle/tpope-vim-surround
 	url = http://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/tsaleh-vim-tcomment"]
+	path = vim/bundle/tsaleh-vim-tcomment
+	url = http://github.com/tsaleh/vim-tcomment.git
