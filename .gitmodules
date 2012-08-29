@@ -16,9 +16,6 @@
 [submodule "vim/bundle/tpope-vim-rails"]
 	path = vim/bundle/tpope-vim-rails
 	url = http://github.com/tpope/vim-rails.git
-[submodule "vim/bundle_old/tpope-vim-surround"]
-	path = vim/bundle_old/tpope-vim-surround
-	url = http://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/tpope-vim-surround"]
 	path = vim/bundle/tpope-vim-surround
 	url = http://github.com/tpope/vim-surround.git
