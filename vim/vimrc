@@ -38,7 +38,8 @@ set visualbell                    " No beeping.
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+set directory=/tmp//  " Keep swap files in one location
+
 
 " UNCOMMENT TO USE
 set tabstop=2                    " Global tab width.
@@ -112,6 +113,6 @@ au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 command! Xmllint  :%!xmllint --format --recover -
 
 "Autosave/Read
-au FocusLost * silent! wa
+autocmd BufLeave,FocusLost * silent! wall
 set autowrite
 set autoread
