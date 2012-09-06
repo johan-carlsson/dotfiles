@@ -116,3 +116,7 @@ command! Xmllint  :%!xmllint --format --recover -
 autocmd BufLeave,FocusLost * silent! wall
 set autowrite
 set autoread
+
+"Insert newline without entering insert mode
+map <S-Enter> O<Esc>
+map <CR> o<Esc>
