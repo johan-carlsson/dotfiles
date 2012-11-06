@@ -88,6 +88,8 @@ autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 "Added by johan
 "clear the search highlighting by pressing the Return key
 nnoremap <CR> :noh<CR><CR>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
 "Undo tree plugin
 nnoremap <F5> :GundoToggle<CR>
 "Bufferexplorer
@@ -117,6 +119,22 @@ autocmd BufLeave,FocusLost * silent! wall
 set autowrite
 set autoread
 
-"Insert newline without entering insert mode
-map <S-Enter> O<Esc>
-map <CR> o<Esc>
+" Search for the current selection (redux)
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+function! s:VSetSearch()
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+
+"Like argdo but for the quick fix list
+command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
+   function! QuickfixFilenames()
+     let buffer_numbers = {}
+     for quickfix_item in getqflist()
+       let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+     endfor
+     return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
+endfunction
