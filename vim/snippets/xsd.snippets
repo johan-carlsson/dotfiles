@@ -41,3 +41,19 @@ snippet a
 snippet d
 	<xsd:documentation>${1}</xsd:documenation>
 	${2}
+snippet en
+	<xsd:enumeration value="${1:name}">
+		${2}
+	</xsd:enumeration>
+	${3}
+snippet choice
+	<xsd:simpleType name="${1:name}">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="${2:value}">
+				<xsd:annotation>
+					<xsd:documentation>${3:description}</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			${4}
+		</xsd:restriction>
+	</xsd:simpleType>
