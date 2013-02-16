@@ -101,9 +101,6 @@ let NERDTreeIgnore = ['^target$','\.iml$']
 "Remapping the esc key
 ino jj <esc>
 cno jj <c-c>
-"vno v <esc>
-ino ;; <esc>
-cno ;; <c-c>
 
 "FuzzyFinderTextMate
 "let g:fuf_file_exclude = '\v\~$|\.o$|\.exe$|\.bak$|\.swp|\.class$|^target$'
