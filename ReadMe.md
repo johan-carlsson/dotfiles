@@ -43,6 +43,12 @@ chsh -s /bin/zsh
 ```
 ln -s ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
 ```
+
+##Install ackrc
+```
+ln -s ~/dotfiles/ack/ackrc ~/.ackrc
+```
+
 ###Install Svengelska keyboard layout
 ###Note ln does not work use cp
 ```
