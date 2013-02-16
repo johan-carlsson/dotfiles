@@ -44,9 +44,16 @@ chsh -s /bin/zsh
 ln -s ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
 ```
 
-##Install ackrc
+###Install ackrc
 ```
 ln -s ~/dotfiles/ack/ackrc ~/.ackrc
+```
+
+###Install jboss aliases
+Export $JBOSS_HOME,$JBOSS_SERVER and $JBOSS_LOG_DIR environment variables
+Add this line to .alias
+```
+source ~/dotfiles/jboss/alias
 ```
 
 ###Install Svengelska keyboard layout

@@ -1,0 +1,3 @@
+alias cdjh="cd $JBOSS_HOME"
+alias cdjs="cd $JBOSS_HOME/server/$JBOSS_SERVER"
+alias cdjl="cd $JBOSS_LOG_DIR"
