@@ -1,20 +1,37 @@
+##Install 
+```
+ ln -s ~/Dropbox/dotfiles ~/dotfiles
+```
+
 ##Install vim 
-Delete or move old .vim and .vimrc first
+Delete or move old .vim folder
 
 ```
 ln -s ~/Dropbox/dotfiles/vim/ ~/.vim
-ln -s ~/Dropbox/dotfiles/vim/vimrc ~/.vimrc
-ln -s ~/Dropbox/dotfiles/vim/gvimrc ~/.gvimrc
+```
+
+Add this line to .vimrc
+```
+so $HOME/dotfiles/vim/vimrc
+```
+
+Add this line to .gvimrc
+```
+so $HOME/dotfiles/vim/gvimrc
 ```
 
 ##Install zsh
-Delete or move old .oh-my-zsh and .zshrc first
+Delete or move old .oh-my-zsh first
 
 ```
-ln -s ~/Dropbox/dotfiles/zsh/oh-my-zsh/ ~/.oh-my-zsh
-ln -s ~/Dropbox/dotfiles/zsh/zshrc ~/.zshrc
+ln -s ~/dotfiles/zsh/oh-my-zsh/ ~/.oh-my-zsh
+ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ```
-Add your custom local paths to ~/.paths 
+
+Add this line to .zshrc
+```
+source ~/dotfiles/zsh/zshrc
+```
 
 
 ###Set zsh as your default shell:
@@ -32,6 +49,19 @@ ln -s ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
 cp -r ~/Dropbox/dotfiles/osx/Svengelska.bundle ~/Library/Keyboard\ Layouts/Svengelska.bundle
 ```
 
+###Install osx bash and zsh environments settings
+Add this line to .bashrc or .zshrc
+```
+source ~/dotfiles/osx/environment
+```
+
+###Install unix(osx and linux) bash and zsh environments settings
+Add this line to .bashrc or .zshrc
+```
+source ~/dotfiles/unix/environment
+```
+
+
 ###Fetch git submodules
 ```
 git submodule init
@@ -40,4 +70,10 @@ git submodule update
 If your behinde a proxy you might have to do:
 ```
 env GIT_SSL_NO_VERIFY=true git submodule update
+
+```
+###Add git submodule
+Dont forget to use the http:// protocol
+```
+git submodule add  http://github.com/godlygeek/tabular.git vim/bundle/tabular
 ```
