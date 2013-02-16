@@ -1,0 +1,8 @@
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -lathr'
+alias e='vim'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
