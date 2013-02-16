@@ -1,2 +1,7 @@
 PS1="\u@\h\[\033[01;34m\] \w\[\033[31m\]\n\[\033[0m\]$ "
 
+#History
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+shopt -s histappend
+
