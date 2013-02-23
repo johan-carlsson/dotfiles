@@ -45,6 +45,9 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc files
+
 "Colorschemes
 colorscheme johan
 set background=light
@@ -54,6 +57,7 @@ let g:xml_syntax_folding=1
 autocmd FileType xml setlocal foldmethod=syntax foldlevel=1
 autocmd FileType java setlocal foldmethod=syntax foldlevel=1
 autocmd FileType ruby setlocal foldmethod=syntax foldlevel=1
+autocmd FileType xsd setlocal foldmethod=syntax foldlevel=2
 
 " autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
@@ -106,3 +110,9 @@ so $HOME/.vim/snippets/support_functions.vim
 
 "Toggle spelling on/off
 nmap <silent> <leader>s :set spell!<CR>
+
+
+"Eclim
+nnoremap <Leader>j :JUnit<CR> 
+nnoremap <Leader>b :ProjectBuild<CR> 
+nnoremap <Leader>j :JavaCorrect<CR> 
