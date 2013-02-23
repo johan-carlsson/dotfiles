@@ -115,4 +115,4 @@ nmap <silent> <leader>s :set spell!<CR>
 "Eclim
 nnoremap <Leader>j :JUnit<CR> 
 nnoremap <Leader>b :ProjectBuild<CR> 
-nnoremap <Leader>j :JavaCorrect<CR> 
+nnoremap <Leader>c :JavaCorrect<CR> 
