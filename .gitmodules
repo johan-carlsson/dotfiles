@@ -48,3 +48,6 @@
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
 	url = http://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/bundle/ZoomWin"]
+	path = vim/bundle/ZoomWin
+	url = https://github.com/itspriddle/ZoomWin.git
