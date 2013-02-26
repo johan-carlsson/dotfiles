@@ -40,3 +40,6 @@
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = http://github.com/tpope/vim-eunuch
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = http://github.com/ervandew/supertab
