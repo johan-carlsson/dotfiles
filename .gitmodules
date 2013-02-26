@@ -37,3 +37,6 @@
 [submodule "vim/bundle/speeddating"]
 	path = vim/bundle/speeddating
 	url = http://github.com/tpope/vim-speeddating
+[submodule "vim/bundle/eunuch"]
+	path = vim/bundle/eunuch
+	url = http://github.com/tpope/vim-eunuch
