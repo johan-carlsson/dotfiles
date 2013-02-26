@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = http://github.com/vim-scripts/vimwiki.git
+[submodule "vim/bundle/speeddating"]
+	path = vim/bundle/speeddating
+	url = http://github.com/tpope/vim-speeddating
