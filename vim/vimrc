@@ -121,3 +121,5 @@ nnoremap <Leader>c :JavaCorrect<CR>
 "Expand active files directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+nmap <leader>p :CtrlPCurWD<CR>
+
