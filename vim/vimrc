@@ -100,3 +100,13 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 noremap <leader>p :CtrlPCurWD<CR>
 
+"Toggle background using same keyboard mapping style as unimpaired plugin
+nnoremap cob :call ToggleBackground()<cr>
+
+function! ToggleBackground()
+  if &background == "dark"
+    set background=light
+  else 
+    set background=dark
+  endif
+endfunction
