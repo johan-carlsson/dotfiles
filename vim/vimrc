@@ -42,14 +42,6 @@ autocmd FileType java setlocal foldmethod=syntax foldlevel=1
 autocmd FileType ruby setlocal foldmethod=syntax foldlevel=1
 autocmd FileType xsd setlocal foldmethod=syntax foldlevel=2
 
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-"autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-"clear the search highlighting by pressing the Return key or ctrl-l
-"nnoremap <CR> :noh<CR><CR>
-
 "Mappings for vimrc stuff
 nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
