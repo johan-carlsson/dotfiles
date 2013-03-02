@@ -50,6 +50,10 @@ autocmd FileType xsd setlocal foldmethod=syntax foldlevel=2
 "clear the search highlighting by pressing the Return key or ctrl-l
 "nnoremap <CR> :noh<CR><CR>
 
+"Mappings for vimrc stuff
+nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
+
 "Undo tree plugin
 nnoremap <F5> :GundoToggle<CR>
 
