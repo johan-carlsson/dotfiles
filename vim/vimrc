@@ -110,3 +110,29 @@ function! ToggleBackground()
     set background=dark
   endif
 endfunction
+
+"Change xml namespace prefix function
+function! XmlChangeNamespacePrefix(from,to)
+  if a:from == "" 
+    let from_separator = ""
+  else
+    let from_separator = ":"
+  endif
+
+  if a:to == "" 
+    let to_separator = ""
+  else
+    let to_separator = ":"
+  endif
+
+  if a:from == ""
+    exe '%s/\v\<(\w+)>' . a:from . from_separator .'/<' . a:to . to_separator .'\1/ge'
+    exe '%s/\v\<\/(\w+)>' . a:from . from_separator .'/<\/' . a:to . to_separator .'\1/ge'
+    exe '%s/xmlns=/xmlns' . to_separator . a:to . '=/ge'
+  else
+    exe '%s/\v\<(\?)@!' . a:from . from_separator .'/<' . a:to . to_separator .'/ge'
+    exe '%s/<\/' . a:from . from_separator .'/<\/' . a:to . to_separator . '/ge'
+    exe '%s/xmlns' . from_separator . a:from . '/xmlns' . to_separator . a:to . '/ge'
+  endif
+endfunction
+
