@@ -1,9 +1,12 @@
+" Initialization {{{
 set nocompatible                  " Must come first because it changes other options.
 
 silent! call pathogen#runtime_append_all_bundles() " Load pathogen
 
 runtime! plugin/sensible.vim " Load sensible before vimrc
+" }}}
 
+" General options  {{{
 
 set showmode                      " Display the mode you're in.
 
@@ -29,85 +32,97 @@ set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
-" Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-
 set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
 
-" Automatic fold settings for specific files.
-let g:xml_syntax_folding=1
-autocmd FileType xml setlocal foldmethod=syntax foldlevel=1
-autocmd FileType java setlocal foldmethod=syntax foldlevel=1
-autocmd FileType ruby setlocal foldmethod=syntax foldlevel=1
-autocmd FileType xsd setlocal foldmethod=syntax foldlevel=2
-
-"Mappings for vimrc stuff
-nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
-nnoremap <leader>vs :source $MYVIMRC<cr>
-
-"Undo tree plugin
-nnoremap <F5> :GundoToggle<CR>
-
-"NerdTree plugin
-nnoremap <F3> :NERDTreeToggle<CR>
-let NERDTreeChDirMode=2
-let NERDTreeIgnore = ['^target$','\.iml$']
-
-"Remapping the esc key
-inoremap jj <esc>
-cnoremap jj <c-c>
-
-"FuzzyFinderTextMate
-"let g:fuf_file_exclude = '\v\~$|\.o$|\.exe$|\.bak$|\.swp|\.class$|^target$'
-noremap <Leader>t :FuzzyFinderTextMate<Enter>
-noremap <leader>r :FuzzyFinderTextMateRefreshFiles<CR>
-let g:fuzzy_ignore = "*/target/*;target/*;target;*.iml"
-
-"Xmllint
-au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-command! Xmllint  :%!xmllint --format --recover -
+" Useful status information at bottom of screen
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 "Autosave/Read
 autocmd BufLeave,FocusLost * silent! wall
 set autowrite
 set autoread
 
+" General options }}}
+
+" Plugin settings and configuration  {{{
+let NERDTreeChDirMode=2
+let NERDTreeIgnore = ['^target$','\.iml$']
+
+let g:fuzzy_ignore = "*/target/*;target/*;target;*.iml"
+
+"Snippets support functions
+source $HOME/.vim/snippets/support_functions.vim
+
+"}}}
+
+" Folding {{{
+let g:xml_syntax_folding=1
+
+augroup folding
+    autocmd!
+    autocmd FileType xml  setlocal foldmethod=syntax foldlevel=1
+    autocmd FileType java setlocal foldmethod=syntax foldlevel=1
+    autocmd FileType ruby setlocal foldmethod=syntax foldlevel=1
+    autocmd FileType xsd  setlocal foldmethod=syntax foldlevel=2
+    autocmd FileType vim  setlocal foldmethod=marker
+augroup END
+
+" Folding }}}
+
+" Mappings {{{
+"Mappings for vimrc stuff
+nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
+
+"Remapping the esc key
+inoremap jj <esc>
+cnoremap jj <c-c>
+
+"Undo tree plugin
+nnoremap <F5> :GundoToggle<CR>
+
+"NerdTree plugin
+nnoremap <F3> :NERDTreeToggle<CR>
+
+"FuzzyFinderTextMate
+noremap <Leader>t :FuzzyFinderTextMate<Enter>
+noremap <leader>r :FuzzyFinderTextMateRefreshFiles<CR>
+
 " Search for the current selection (redux)
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
-function! s:VSetSearch()
-  let temp = @s
-  norm! gv"sy
-  let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
-  let @s = temp
-endfunction
-
-"Snippets support functions
-so $HOME/.vim/snippets/support_functions.vim
 
 "Eclim
-nnoremap <Leader>j :JUnit<CR> 
-nnoremap <Leader>b :ProjectBuild<CR> 
-nnoremap <Leader>c :JavaCorrect<CR> 
+nnoremap <Leader>jt :JUnit<CR> 
+nnoremap <Leader>jb :ProjectBuild<CR> 
+nnoremap <Leader>jc :JavaCorrect<CR> 
 
 "Expand active files directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+"Ctrlp
 noremap <leader>p :CtrlPCurWD<CR>
 
 "Toggle background using same keyboard mapping style as unimpaired plugin
 nnoremap cob :call ToggleBackground()<cr>
 
-function! ToggleBackground()
-  if &background == "dark"
-    set background=light
-  else 
-    set background=dark
-  endif
-endfunction
+augroup mappings
+autocmd!
+"Canonicalize xml element. Change </test> into <test></test>
+autocmd Filetype xml,xstl,xsd nmap <leader>xc 0f/x<leader>e
+augroup END
 
-"Change xml namespace prefix function
+" Mappings }}}
+
+" Commands {{{
+"Xmllint
+command! Xmllint  :%!xmllint --format --recover -
+" }}}
+
+" Functions {{{
+
+"Change xml namespace prefix function {{{
 function! XmlChangeNamespacePrefix(from,to)
   if a:from == "" 
     let from_separator = ""
@@ -122,13 +137,35 @@ function! XmlChangeNamespacePrefix(from,to)
   endif
 
   if a:from == ""
-    exe '%s/\v\<(\w+)>' . a:from . from_separator .'/<' . a:to . to_separator .'\1/ge'
-    exe '%s/\v\<\/(\w+)>' . a:from . from_separator .'/<\/' . a:to . to_separator .'\1/ge'
-    exe '%s/xmlns=/xmlns' . to_separator . a:to . '=/ge'
+    execute '%s/\v\<(\w+)>' . a:from . from_separator .'/<' . a:to . to_separator .'\1/ge'
+    execute '%s/\v\<\/(\w+)>' . a:from . from_separator .'/<\/' . a:to . to_separator .'\1/ge'
+    execute '%s/xmlns=/xmlns' . to_separator . a:to . '=/ge'
   else
-    exe '%s/\v\<(\?)@!' . a:from . from_separator .'/<' . a:to . to_separator .'/ge'
-    exe '%s/<\/' . a:from . from_separator .'/<\/' . a:to . to_separator . '/ge'
-    exe '%s/xmlns' . from_separator . a:from . '/xmlns' . to_separator . a:to . '/ge'
+    execute '%s/\v\<(\?)@!' . a:from . from_separator .'/<' . a:to . to_separator .'/ge'
+    execute '%s/<\/' . a:from . from_separator .'/<\/' . a:to . to_separator . '/ge'
+    execute '%s/xmlns' . from_separator . a:from . '/xmlns' . to_separator . a:to . '/ge'
   endif
 endfunction
+" }}}
+
+"Toggle background {{{
+function! ToggleBackground()
+  if &background == "dark"
+    set background=light
+  else 
+    set background=dark
+  endif
+endfunction
+" }}}
+
+" Search visual selection {{{
+function! s:VSetSearch()
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+" }}}
+
+"}}}
 
