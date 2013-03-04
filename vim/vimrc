@@ -49,9 +49,13 @@ set autoread
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
 
+"TextMate fuzzy finder
 let g:fuzzy_ignore = "*/target/*;target/*;target;*.iml"
 
-"Snippets support functions
+"Ctrl-p
+set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.iml,  "
+
+"Snipmates support functions
 source $HOME/.vim/snippets/support_functions.vim
 
 "}}}
