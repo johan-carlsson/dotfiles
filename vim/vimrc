@@ -53,7 +53,7 @@ let NERDTreeIgnore = ['^target$','\.iml$']
 let g:fuzzy_ignore = "*/target/*;target/*;target;*.iml"
 
 "Ctrl-p
-set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.iml,  "
+" set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.iml,  "
 
 "Snipmates support functions
 source $HOME/.vim/snippets/support_functions.vim
@@ -65,7 +65,7 @@ let g:xml_syntax_folding=1
 
 augroup folding
     autocmd!
-    autocmd FileType xml  setlocal foldmethod=syntax foldlevel=1
+    autocmd FileType xml  setlocal foldmethod=syntax foldlevel=2
     autocmd FileType java setlocal foldmethod=syntax foldlevel=1
     autocmd FileType ruby setlocal foldmethod=syntax foldlevel=1
     autocmd FileType xsd  setlocal foldmethod=syntax foldlevel=2
