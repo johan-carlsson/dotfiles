@@ -75,7 +75,7 @@ augroup END
 " Folding }}}
 
 " Mappings {{{
-"Mappings for vimrc stuff
+"Vimrc stuff
 nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
 
