@@ -60,6 +60,14 @@ source $HOME/.vim/snippets/support_functions.vim
 
 "}}}
 
+" File settings{{{
+augroup file
+  autocmd!
+  autocmd BufRead,BufNewFile,BufEnter jboss-esb.xml setlocal filetype=jboss-esb syntax=xml foldmethod=syntax foldlevel=2
+augroup END
+
+"}}}
+
 " Folding {{{
 let g:xml_syntax_folding=1
 
