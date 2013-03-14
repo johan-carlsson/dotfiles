@@ -30,16 +30,16 @@ snippet fe
 	</xsl:for-each>
 
 
-/* map canonical (to) backend date */
-snippet mcbd
+/* map canonical (to) backend ssn */
+snippet mcbs
 	<xsl:if test="string(${1:value})">
 		<${2:field}>
 			<xsl:value-of select="formatDecoder:canonicalToBackendSSN($1,'[0-9]{12}')"/>
 		</$2>
 	</xsl:if>
 
-/* map backend (to) canonical date */
-snippet mbcd
+/* map backend (to) canonical ssn */
+snippet mbcs
 	<xsl:if test="string(${1:value})">
 		<${2:field}>
 			<xsl:value-of select="formatDecoder:backendToCanonicalSSN($1)"/>
@@ -61,3 +61,9 @@ snippet ms
 			<xsl:value-of select="$1"/>
 		</$2>
 	</xsl:if>
+/* true */
+snippet true
+	<xsl:value-of select="true()"/>
+/* false */
+snippet false
+	<xsl:value-of select="false()"/>
