@@ -1,0 +1,7 @@
+	<!-- Unmarshall from xml to pojo -->
+	<action class="com.redpill.esb.actions.xml.JAXBTransformationAction" name="xml-to-${1:to}-pojo">
+		<property name="mode" value="unmarshall"/>
+		<property name="topLevelClassname" value="se.folksam.fik.interfaces.${2:module}.${3:class}._1.Fik"/>
+		<property name="contextPath" value="se.folksam.fik.interfaces.$2.$3._1"/>
+		<property name="toLocation" value="$1_pojo"/>
+	</action>

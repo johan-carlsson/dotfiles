@@ -1,0 +1,5 @@
+	<!-- Transform ${1:from} to ${2:to} ${3:type} -->
+	<action class="org.jboss.soa.esb.actions.transformation.xslt.XsltAction" name="transform-$1-to-$2-$3">
+		<property name="templateFile" value="/$1-to-$2.xsl"/>
+		<property name="resultType" value="STRING"/>
+	</action>
