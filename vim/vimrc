@@ -53,7 +53,7 @@ let NERDTreeIgnore = ['^target$','\.iml$']
 let g:fuzzy_ignore = "*/target/*;target/*;target;*.iml"
 
 "Ctrl-p
-" set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.iml,  "
+set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.iml,  "
 
 "Snipmates support functions
 source $HOME/.vim/snippets/support_functions.vim
@@ -87,10 +87,6 @@ augroup END
 nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
 
-"Remapping the esc key
-inoremap jj <esc>
-cnoremap jj <c-c>
-
 "Undo tree plugin
 nnoremap <F5> :GundoToggle<CR>
 
@@ -108,7 +104,11 @@ xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 "Eclim
 nnoremap <Leader>jt :JUnit<CR> 
 nnoremap <Leader>jb :ProjectBuild<CR> 
+nnoremap <Leader>pb :ProjectBuild<CR> 
 nnoremap <Leader>jc :JavaCorrect<CR> 
+nnoremap <Leader>ji :JavaImport<CR> 
+nnoremap <Leader>jr :ProjectRefresh<CR> 
+nnoremap <Leader>pr :ProjectRefresh<CR> 
 
 "Expand active files directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
