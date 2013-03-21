@@ -25,7 +25,7 @@ git submodule add  http://github.com/godlygeek/tabular.git vim/bundle/tabular
 Delete or move old .vim folder
 
 ```
-ln -s ~/Dropbox/dotfiles/vim/ ~/.vim
+ln -s ~/dotfiles/vim/ ~/.vim
 ```
 
 Add this line to .vimrc
@@ -102,7 +102,7 @@ source ~/.alias
 
 ##Tmux
 ```
-ln -s ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ```
 
 ##Ack
