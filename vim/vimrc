@@ -1,6 +1,6 @@
 " Initialization {{{
 set nocompatible                  " Must come first because it changes other options.
-
+let mapleader = ","
 silent! call pathogen#runtime_append_all_bundles() " Load pathogen
 
 runtime! plugin/sensible.vim " Load sensible before vimrc
