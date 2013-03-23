@@ -122,7 +122,7 @@ nnoremap cob :call ToggleBackground()<cr>
 augroup mappings
 autocmd!
 "Canonicalize xml element. Change </test> into <test></test>
-autocmd Filetype xml,xstl,xsd nmap <leader>xc 0f/x<leader>e
+autocmd Filetype xml,xstl,xsd nmap <leader>xc 0f/x\e
 augroup END
 
 " Mappings }}}
