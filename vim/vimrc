@@ -128,6 +128,9 @@ autocmd!
 autocmd Filetype xml,xstl,xsd nmap <leader>xc 0f/x\e
 augroup END
 
+"Syntastic
+nnoremap <leader>s :SyntasticCheck<CR>
+
 " Mappings }}}
 
 " Commands {{{
@@ -183,4 +186,6 @@ endfunction
 " }}}
 
 "}}}
+
+
 
