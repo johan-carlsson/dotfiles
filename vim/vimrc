@@ -161,7 +161,7 @@ function! XmlChangeNamespacePrefix(from,to)
   else
     execute '%s/\v\<(\?)@!' . a:from . from_separator .'/<' . a:to . to_separator .'/ge'
     execute '%s/<\/' . a:from . from_separator .'/<\/' . a:to . to_separator . '/ge'
-    execute '%s/xmlns' . from_separator . a:from . '/xmlns' . to_separator . a:to . '/ge'
+    execute '%s/xmlns' . from_separator . a:from . '=/xmlns' . to_separator . a:to . '=/ge'
   endif
 endfunction
 " }}}
