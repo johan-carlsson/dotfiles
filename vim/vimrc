@@ -1,6 +1,6 @@
 " Initialization {{{
 set nocompatible                  " Must come first because it changes other options.
-
+let mapleader = ","
 silent! call pathogen#runtime_append_all_bundles() " Load pathogen
 
 runtime! plugin/sensible.vim " Load sensible before vimrc
@@ -125,8 +125,11 @@ nnoremap <Leader>sr :call ReloadAllSnippets()<cr>
 augroup mappings
 autocmd!
 "Canonicalize xml element. Change </test> into <test></test>
-autocmd Filetype xml,xstl,xsd nmap <leader>xc 0f/x<leader>e
+autocmd Filetype xml,xstl,xsd nmap <leader>xc 0f/x\e
 augroup END
+
+"Syntastic
+nnoremap <leader>s :SyntasticCheck<CR>
 
 " Mappings }}}
 
