@@ -119,6 +119,9 @@ noremap <leader>p :CtrlPCurWD<CR>
 "Toggle background using same keyboard mapping style as unimpaired plugin
 nnoremap cob :call ToggleBackground()<cr>
 
+"Snippets
+nnoremap <Leader>sr :call ReloadAllSnippets()<cr> 
+
 augroup mappings
 autocmd!
 "Canonicalize xml element. Change </test> into <test></test>
