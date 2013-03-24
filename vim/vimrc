@@ -100,7 +100,7 @@ nnoremap <F3> :NERDTreeToggle<CR>
 
 "FuzzyFinderTextMate
 noremap <Leader>t :FuzzyFinderTextMate<Enter>
-noremap <leader>r :FuzzyFinderTextMateRefreshFiles<CR>
+noremap <leader>R :FuzzyFinderTextMateRefreshFiles<CR>
 
 " Search for the current selection (redux)
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
@@ -127,8 +127,12 @@ nnoremap cob :call ToggleBackground()<cr>
 "Snippets
 nnoremap <Leader>sr :call ReloadAllSnippets()<cr>
 
-"Search replace word under cursor
-nnoremap \r *N:%s/<C-R>///gc<left><left><left>
+"Search and Replace Word under cursor
+nnoremap <leader>r ebviw"vy:%s/\<<C-R>v\>//gc<left><left><left>
+
+"Indent Document
+nnoremap <leader>id mvggVG='v
+
 
 augroup mappings
 autocmd!
@@ -194,6 +198,5 @@ endfunction
 " }}}
 
 "}}}
-
 
 
