@@ -120,7 +120,10 @@ noremap <leader>p :CtrlPCurWD<CR>
 nnoremap cob :call ToggleBackground()<cr>
 
 "Snippets
-nnoremap <Leader>sr :call ReloadAllSnippets()<cr> 
+nnoremap <Leader>sr :call ReloadAllSnippets()<cr>
+
+"Search replace word under cursor
+nnoremap \r *N:%s/<C-R>///gc<left><left><left>
 
 augroup mappings
 autocmd!
