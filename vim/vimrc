@@ -66,6 +66,9 @@ source $HOME/.vim/snippets/support_functions.vim
 augroup file
   autocmd!
   autocmd BufRead,BufNewFile,BufEnter jboss-esb.xml setlocal filetype=jboss-esb syntax=xml foldmethod=syntax foldlevel=2
+  "Auto source vimrc files
+  autocmd bufwritepost .vimrc,vimrc source $MYVIMRC
+  autocmd bufwritepost .gvimrc,gvimrc source $MYGVIMRC
 augroup END
 
 "}}}
