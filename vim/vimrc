@@ -133,6 +133,9 @@ nnoremap <leader>r ebviw"vy:%s/\<<C-R>v\>//gc<left><left><left>
 "Indent Document
 nnoremap <leader>id mvggVG='v
 
+"Use dot command line wise in visual mode
+xnoremap . :norm.<CR> to vimrc
+
 
 augroup mappings
 autocmd!
