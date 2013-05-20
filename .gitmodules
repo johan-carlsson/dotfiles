@@ -73,3 +73,6 @@
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
 	url = http://github.com/tpope/vim-abolish.git
+[submodule "vim/bundle/rubytest"]
+	path = vim/bundle/rubytest
+	url = http://github.com/janx/vim-rubytest
