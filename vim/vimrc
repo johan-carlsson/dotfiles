@@ -52,9 +52,6 @@ set autoread
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
 
-"TextMate fuzzy finder
-let g:fuzzy_ignore = "*/target/*;target/*;target;*.iml"
-
 "Ctrl-p
 " set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.iml,  "
 
@@ -99,9 +96,6 @@ nnoremap <F5> :GundoToggle<CR>
 "NerdTree plugin
 nnoremap <F3> :NERDTreeToggle<CR>
 
-"FuzzyFinderTextMate
-noremap <Leader>t :FuzzyFinderTextMate<Enter>
-noremap <leader>R :FuzzyFinderTextMateRefreshFiles<CR>
 
 " Search for the current selection (redux)
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
@@ -202,5 +196,4 @@ endfunction
 " }}}
 
 "}}}
-
 
