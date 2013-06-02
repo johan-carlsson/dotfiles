@@ -52,9 +52,6 @@ set autoread
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
 
-"Ctrl-p
-" set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.iml,  "
-
 "Snipmates support functions
 source $HOME/.vim/snippets/support_functions.vim
 
@@ -114,9 +111,6 @@ nnoremap <Leader>pr :ProjectRefresh<CR>
 
 "Expand active files directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-"Ctrlp
-noremap <leader>p :CtrlPCurWD<CR>
 
 "Toggle background using same keyboard mapping style as unimpaired plugin
 nnoremap cob :call ToggleBackground()<cr>
