@@ -96,6 +96,8 @@ nnoremap <F5> :GundoToggle<CR>
 "NerdTree plugin
 nnoremap <F3> :NERDTreeToggle<CR>
 
+"Command-t
+nnoremap <silent> <Leader>f :CommandT<CR>
 
 " Search for the current selection (redux)
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
