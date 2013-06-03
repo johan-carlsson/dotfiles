@@ -73,3 +73,6 @@
 [submodule "vim/bundle/rubytest"]
 	path = vim/bundle/rubytest
 	url = http://github.com/janx/vim-rubytest
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = http://github.com/wincent/Command-T.git
