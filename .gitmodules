@@ -76,3 +76,9 @@
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = http://github.com/wincent/Command-T.git
+[submodule "vim/bundle/elixir"]
+	path = vim/bundle/elixir
+	url = http://github.com/elixir-lang/vim-elixir.git
+[submodule "vim/bundle/elixir-snippets"]
+	path = vim/bundle/elixir-snippets
+	url = http://github.com/carlosgaldino/elixir-snippets.git
