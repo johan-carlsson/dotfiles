@@ -82,3 +82,6 @@
 [submodule "vim/bundle/elixir-snippets"]
 	path = vim/bundle/elixir-snippets
 	url = http://github.com/carlosgaldino/elixir-snippets.git
+[submodule "vim/bundle/io"]
+	path = vim/bundle/io
+	url = http://github.com/xhr/vim-io.git
