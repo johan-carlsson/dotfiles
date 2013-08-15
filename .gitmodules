@@ -85,3 +85,6 @@
 [submodule "vim/bundle/io"]
 	path = vim/bundle/io
 	url = http://github.com/xhr/vim-io.git
+[submodule "vim/bundle/prolog"]
+	path = vim/bundle/prolog
+	url = http://github.com/adimit/prolog.vim.git
