@@ -137,6 +137,9 @@ augroup END
 "Syntastic
 nnoremap <leader>s :SyntasticCheck<CR>
 
+" Next/previous tab
+nnoremap ]w :tabnext<CR>
+nnoremap [w :tabprevious<CR>
 " Mappings }}}
 
 " Commands {{{
