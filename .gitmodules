@@ -88,3 +88,6 @@
 [submodule "vim/bundle/prolog"]
 	path = vim/bundle/prolog
 	url = http://github.com/adimit/prolog.vim.git
+[submodule "vim/bundle/scala"]
+	path = vim/bundle/scala
+	url = http://github.com/derekwyatt/vim-scala
