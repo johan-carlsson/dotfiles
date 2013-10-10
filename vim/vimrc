@@ -12,7 +12,7 @@ set showmode                      " Display the mode you're in.
 
 set hidden                        " Handle multiple buffers better.
 
-set wildmode=full                 " Complete files like a shell.
+set wildmode=longest:full         " Complete files like a shell.
 set wildmenu
 
 set ignorecase                    " Case-insensitive searching.
