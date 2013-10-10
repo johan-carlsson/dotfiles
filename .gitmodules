@@ -91,3 +91,6 @@
 [submodule "vim/bundle/scala"]
 	path = vim/bundle/scala
 	url = http://github.com/derekwyatt/vim-scala
+[submodule "vim/bundle/ag"]
+	path = vim/bundle/ag
+	url = http://github.com/rking/ag.vim
