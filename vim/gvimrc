@@ -6,5 +6,5 @@ set guioptions-=T                 " Hide toolbar.
 
 "Solarized
 colorscheme solarized
-set background=dark        
+set background=light        
 let g:solarized_contrast="high"
