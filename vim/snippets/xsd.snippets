@@ -1,12 +1,13 @@
 snippet e 
 	<xsd:element maxOccurs="1" minOccurs="1" name="${1:name}">${2}</xsd:element>
-	${3}
+snippet eo 
+	<xsd:element maxOccurs="1" minOccurs="0" name="${1:name}">${2}</xsd:element>
 snippet et 
 	<xsd:element maxOccurs="1" minOccurs="1" name="${1:name}" type="${2:type}">${3}</xsd:element>
-	${4}
+snippet eto 
+	<xsd:element maxOccurs="1" minOccurs="0" name="${1:name}" type="${2:type}">${3}</xsd:element>
 snippet er 
 	<xsd:element maxOccurs="1" minOccurs="1" name="${1:name}" ref="${2:ref}">${3}</xsd:element>
-	${4}
 snippet c
 	  <xsd:complexType name="${1:name}">
 			${2}
@@ -18,7 +19,7 @@ snippet s
 	</xsd:schema>
 snippet se
 	<xsd:sequence>
-		${r1}
+		${1}
 	</xsd:sequence>
 snippet si
 	<xsd:simpleType name="${1:name}">
@@ -30,7 +31,6 @@ snippet r
 	</xsd:simpleType>
 snippet p
 	<xsd:pattern value="${1:value}">
-	${2}
 snippet i
 	<xsd:import namespace="${1:namespace}" schemaLocation="${2:schemaLocation}/>
 	${3}
@@ -44,7 +44,6 @@ snippet en
 	<xsd:enumeration value="${1:name}">
 		${2}
 	</xsd:enumeration>
-	${3}
 snippet choice
 	<xsd:simpleType name="${1:name}">
 		<xsd:restriction base="xsd:string">

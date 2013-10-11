@@ -1,50 +1,26 @@
 snippet if
 	<xsl:if test="${1:condition}">
-		${2}
 	</xsl:if>
 snippet at
 	<xsl:apply-templates select="${1:select}"/>
 snippet tm
 	<xsl:template match="${1:match}">
-		${2}
 	</xsl:template>
 snippet vo
 	<xsl:value-of select="${1:select}"/>
-	${2}
 snippet c
 	<xsl:choose>
 		<xsl:when test="${1:test}">
-			${2}
 		</xsl:when>
 		<xsl:otherwise>
-			${3}
 		</xsl:otherwise>	
 	</xsl:choose>
 snippet w
 	<xsl:when test="${1:test}">
-		${2}
 	</xsl:when>
 snippet fe
 	<xsl:for-each select="${1:select}">
-		${2}	
 	</xsl:for-each>
-
-
-/* map canonical (to) backend ssn */
-snippet mcbs
-	<xsl:if test="string(${1:value})">
-		<${2:field}>
-			<xsl:value-of select="formatDecoder:canonicalToBackendSSN($1,'[0-9]{12}')"/>
-		</$2>
-	</xsl:if>
-
-/* map backend (to) canonical ssn */
-snippet mbcs
-	<xsl:if test="string(${1:value})">
-		<${2:field}>
-			<xsl:value-of select="formatDecoder:backendToCanonicalSSN($1)"/>
-		</$2>
-	</xsl:if>
 
 /* map */
 snippet m
