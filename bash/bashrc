@@ -4,6 +4,7 @@ else
   PS1="\u@\h\[\033[01;34m\] \w\[\033[31m\]\n\[\033[0m\]$ "
 fi
 
+export EDITOR=vim
 
 #History
 export HISTCONTROL=erasedups
