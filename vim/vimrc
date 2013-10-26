@@ -12,7 +12,8 @@ set showmode                      " Display the mode you're in.
 
 set hidden                        " Handle multiple buffers better.
 
-set wildmode=list:longest         " Complete files like a shell.
+set wildmode=longest:full         " Complete files like a shell.
+set wildmenu
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
@@ -51,12 +52,6 @@ set autoread
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
 
-"TextMate fuzzy finder
-let g:fuzzy_ignore = "*/target/*;target/*;target;*.iml"
-
-"Ctrl-p
-" set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.iml,  "
-
 "Snipmates support functions
 source $HOME/.vim/snippets/support_functions.vim
 
@@ -65,7 +60,7 @@ source $HOME/.vim/snippets/support_functions.vim
 " File settings{{{
 augroup file
   autocmd!
-  autocmd BufRead,BufNewFile,BufEnter jboss-esb.xml setlocal filetype=jboss-esb syntax=xml foldmethod=syntax foldlevel=2
+  autocmd BufRead,BufNewFile,BufEnter jboss-esb.xml setlocal filetype=jboss-esb syntax=xml foldmethod=syntax foldlevel=99
   "Auto source vimrc files
   autocmd bufwritepost .vimrc,vimrc source $MYVIMRC
   autocmd bufwritepost .gvimrc,gvimrc source $MYGVIMRC
@@ -78,10 +73,10 @@ let g:xml_syntax_folding=1
 
 augroup folding
     autocmd!
-    autocmd FileType xml  setlocal foldmethod=syntax foldlevel=2
-    autocmd FileType java setlocal foldmethod=syntax foldlevel=1
-    autocmd FileType ruby setlocal foldmethod=syntax foldlevel=1
-    autocmd FileType xsd  setlocal foldmethod=syntax foldlevel=2
+    autocmd FileType xml  setlocal foldmethod=syntax foldlevel=9
+    autocmd FileType java setlocal foldmethod=syntax foldlevel=9
+    autocmd FileType ruby setlocal foldmethod=syntax foldlevel=2
+    autocmd FileType xsd  setlocal foldmethod=syntax foldlevel=9
     autocmd FileType vim  setlocal foldmethod=marker
 augroup END
 
@@ -98,9 +93,8 @@ nnoremap <F5> :GundoToggle<CR>
 "NerdTree plugin
 nnoremap <F3> :NERDTreeToggle<CR>
 
-"FuzzyFinderTextMate
-noremap <Leader>t :FuzzyFinderTextMate<Enter>
-noremap <leader>R :FuzzyFinderTextMateRefreshFiles<CR>
+"Command-t
+nnoremap <silent> <Leader>f :CommandT<CR>
 
 " Search for the current selection (redux)
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
@@ -118,9 +112,6 @@ nnoremap <Leader>pr :ProjectRefresh<CR>
 "Expand active files directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-"Ctrlp
-noremap <leader>p :CtrlPCurWD<CR>
-
 "Toggle background using same keyboard mapping style as unimpaired plugin
 nnoremap cob :call ToggleBackground()<cr>
 
@@ -133,6 +124,9 @@ nnoremap <leader>r ebviw"vy:%s/\<<C-R>v\>//gc<left><left><left>
 "Indent Document
 nnoremap <leader>id mvggVG='v
 
+"Use dot command line wise in visual mode
+xnoremap . :norm.<CR> to vimrc
+
 
 augroup mappings
 autocmd!
@@ -143,6 +137,9 @@ augroup END
 "Syntastic
 nnoremap <leader>s :SyntasticCheck<CR>
 
+" Next/previous tab
+nnoremap ]w :tabnext<CR>
+nnoremap [w :tabprevious<CR>
 " Mappings }}}
 
 " Commands {{{
@@ -198,5 +195,4 @@ endfunction
 " }}}
 
 "}}}
-
 
