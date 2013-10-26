@@ -59,6 +59,9 @@ hi SpellCap ctermfg=7
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
 
+let g:CommandTMaxHeight=15
+let g:CommandTMinHeight=15
+
 "Snipmates support functions
 source $HOME/.vim/snippets/support_functions.vim
 
