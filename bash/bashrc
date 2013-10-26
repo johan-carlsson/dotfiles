@@ -1,11 +1,6 @@
-if [ $VIM ]; then
- PS1="\$ "
-else
-  PS1="\u@\h\[\033[01;34m\] \w\[\033[31m\]\n\[\033[0m\]$ "
-fi
+PS1="\u@\h\[\033[01;34m\] \w\[\033[31m\]\n\[\033[0m\]$ "
 
 export EDITOR=vim
-
 #History
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
