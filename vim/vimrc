@@ -48,6 +48,18 @@ set autoread
 
 " General options }}}
 
+" Colour in terminal mode {{{
+
+if !has('gui_running')
+    "Use Dark background
+    set background=dark
+
+    " More colors in terminal 
+    set t_Co=256
+endif
+
+" }}}
+
 " Plugin settings and configuration  {{{
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
