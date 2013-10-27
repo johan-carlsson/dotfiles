@@ -52,6 +52,11 @@ set autoread
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
 
+let g:CommandTMaxHeight=15
+let g:CommandTMinHeight=15
+" Clear input 
+let g:CommandTClearMap="<C-w>"
+
 "Snipmates support functions
 source $HOME/.vim/snippets/support_functions.vim
 
