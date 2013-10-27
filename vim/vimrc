@@ -46,13 +46,6 @@ autocmd BufLeave,FocusLost * silent! wall
 set autowrite
 set autoread
 
-" Spell indicator that works in terminal
-" highlight clear SpellBad
-" highlight SpellBad cterm=underline
-" highlight SpellBad gui=undercurl
-hi SpellBad ctermfg=7 
-hi SpellCap ctermfg=7 
-
 " General options }}}
 
 " Colour in terminal mode {{{
