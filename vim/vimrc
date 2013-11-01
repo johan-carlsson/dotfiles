@@ -61,6 +61,11 @@ endif
 " }}}
 
 " Plugin settings and configuration  {{{
+
+"Easymotion 
+"No background shading
+hi EasyMotionShade ctermbg=none
+
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
 
