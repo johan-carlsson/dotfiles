@@ -76,6 +76,10 @@ let g:CommandTClearMap="<C-w>"
 "Snipmates support functions
 source $HOME/.vim/snippets/support_functions.vim
 
+"Syntastic
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'],'passive_filetypes': ['java','xml'] }
+
+
 "}}}
 
 " File settings{{{
