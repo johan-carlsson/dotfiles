@@ -66,6 +66,8 @@ let NERDTreeIgnore = ['^target$','\.iml$']
 
 let g:CommandTMaxHeight=15
 let g:CommandTMinHeight=15
+let g:CommandTHighlightColor='StatusLine'
+
 " Clear input 
 let g:CommandTClearMap="<C-w>"
 
