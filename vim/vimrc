@@ -83,6 +83,13 @@ augroup file
   "Auto source vimrc files
   autocmd bufwritepost .vimrc,vimrc source $MYVIMRC
   autocmd bufwritepost .gvimrc,gvimrc source $MYGVIMRC
+
+  " Set cursor position unless it's invalid or in an event handler
+  autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
+
 augroup END
 
 "}}}
