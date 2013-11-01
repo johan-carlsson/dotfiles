@@ -80,6 +80,12 @@ source $HOME/.vim/snippets/support_functions.vim
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'],'passive_filetypes': ['java','xml'] }
 
 
+"Rubytest
+map <LocalLeader>t <Plug>RubyTestRun     " change from <Leader>t to <Leader>\
+map <LocalLeader>T <Plug>RubyFileRun     " change from <Leader>T to <Leader>]
+map <LocalLeader>l <Plug>RubyTestRunLast " change from <Leader>l to <Leader>/
+
+
 "}}}
 
 " File settings{{{
