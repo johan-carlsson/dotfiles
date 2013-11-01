@@ -61,7 +61,7 @@ endif
 
 "Easymotion 
 "No background shading
-hi EasyMotionShade ctermbg=none
+let g:EasyMotion_do_shade = 0
 
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
