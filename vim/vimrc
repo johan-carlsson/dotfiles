@@ -112,6 +112,16 @@ nnoremap <F3> :NERDTreeToggle<CR>
 
 "Command-t
 nnoremap <silent> <Leader>f :CommandT<CR>
+"Find file
+nnoremap <silent> <Leader>ff :CommandT<CR>
+"Find buffer
+nnoremap <silent> <Leader>fb :CommandTBuffer<CR>
+"Find tag
+nnoremap <silent> <Leader>ft :CommandTTag<CR>
+"Find jump
+nnoremap <silent> <Leader>fj :CommandTJump<CR>
+"Clear find
+nnoremap <silent> <Leader>fc :CommandTFlush<CR>
 
 " Search for the current selection (redux)
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
@@ -143,7 +153,6 @@ nnoremap <leader>id mvggVG='v
 
 "Use dot command line wise in visual mode
 xnoremap . :norm.<CR> to vimrc
-
 
 augroup mappings
 autocmd!
