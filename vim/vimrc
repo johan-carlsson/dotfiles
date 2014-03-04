@@ -51,6 +51,8 @@ set autoread
 " Colour in terminal mode {{{
 
 if !has('gui_running')
+    "Use light background
+    set background=light
     " More colors in terminal 
     set t_Co=256
 endif
@@ -113,12 +115,24 @@ augroup folding
     autocmd!
     autocmd FileType xml  setlocal foldmethod=syntax foldlevel=9
     autocmd FileType java setlocal foldmethod=syntax foldlevel=9
-    autocmd FileType ruby setlocal foldmethod=syntax foldlevel=2
+    autocmd FileType ruby setlocal foldmethod=syntax foldlevel=9
     autocmd FileType xsd  setlocal foldmethod=syntax foldlevel=9
     autocmd FileType vim  setlocal foldmethod=marker
 augroup END
 
 " Folding }}}
+
+" Spelling {{{
+
+
+augroup spelling
+    autocmd!
+    autocmd FileType elixir setlocal spell spelllang=elixir
+    autocmd FileType elixir highlight clear SpellCap
+augroup END
+
+" Spelling }}}
+
 
 " Mappings {{{
 "Vimrc stuff

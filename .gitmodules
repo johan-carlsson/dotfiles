@@ -94,3 +94,9 @@
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = http://github.com/rking/ag.vim
+[submodule "vim/bundle/vitaity"]
+	path = vim/bundle/vitaity
+	url = http://github.com/sjl/vitality.vim
+[submodule "vim/bundle/vim-space"]
+	path = vim/bundle/vim-space
+	url = http://github.com/spiiph/vim-space
