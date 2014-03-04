@@ -113,6 +113,18 @@ augroup END
 
 " Folding }}}
 
+" Spelling {{{
+
+
+augroup spelling
+    autocmd!
+    autocmd FileType elixir setlocal spell spelllang=elixir
+    autocmd FileType elixir highlight clear SpellCap
+augroup END
+
+" Spelling }}}
+
+
 " Mappings {{{
 "Vimrc stuff
 nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
