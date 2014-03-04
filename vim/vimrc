@@ -51,8 +51,8 @@ set autoread
 " Colour in terminal mode {{{
 
 if !has('gui_running')
-    "Use Dark background
-    set background=dark
+    "Use light background
+    set background=light
 
     " More colors in terminal 
     set t_Co=256
