@@ -100,3 +100,6 @@
 [submodule "vim/bundle/vim-space"]
 	path = vim/bundle/vim-space
 	url = http://github.com/spiiph/vim-space
+[submodule "vim/bundle/exchange"]
+	path = vim/bundle/exchange
+	url = http://github.com/tommcdo/vim-exchange
