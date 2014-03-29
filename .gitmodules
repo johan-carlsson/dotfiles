@@ -103,3 +103,6 @@
 [submodule "vim/bundle/exchange"]
 	path = vim/bundle/exchange
 	url = http://github.com/tommcdo/vim-exchange
+[submodule "vim/bundle/delimitMate"]
+	path = vim/bundle/delimitMate
+	url = http://github.com/Raimondi/delimitMate.git
