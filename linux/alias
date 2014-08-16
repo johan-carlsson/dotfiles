@@ -1,4 +1,4 @@
-#alias us="setxkbmap -layout us -variant sve"
+alias sve="setxkbmap -layout us -variant sve"
 alias us="setxkbmap -layout us"
 alias se="setxkbmap se"
 
