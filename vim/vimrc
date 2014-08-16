@@ -147,7 +147,6 @@ nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :NERDTreeFind<CR>
 
 "Command-t
-nnoremap <silent> <Leader>f :CommandT<CR>
 "Find file
 nnoremap <silent> <Leader>ff :CommandT<CR>
 "Find buffer
