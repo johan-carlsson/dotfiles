@@ -25,3 +25,7 @@ Add the following variant block after the line <variantList>:
 3) Finally, after the line "! variant" in the file /usr/share/X11/xkb/rules/evdev.lst add the following line:
   sv              Svengelska (US)
 
+4) Delete all *.xkm files in  /var/lib/xkb
+
+5) Restart X
+Ex: sudo restart lightdm 
