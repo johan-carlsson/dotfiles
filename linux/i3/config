@@ -10,22 +10,24 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #Mod1=Alt Mod4=Win
 set $mod Mod4
-set $mod2 Mod1
+set $mod2 Mod5
 
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal --hide-menubar
 
 # kill focused window
-bindsym $mod+Shift+Q kill
+bindsym $mod+BackSpace kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+space exec dmenu_run
 
 # change focus
 bindsym $mod2+h focus left
@@ -66,10 +68,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout default
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+t floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+t focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -79,34 +81,37 @@ bindsym $mod+a focus parent
 
 # switch to workspace
 bindsym $mod+1 workspace 1 Terminal
-bindsym $mod+2 workspace 2 Web
+bindsym $mod+2 workspace 2 Ide
 bindsym $mod+3 workspace 3 Test
-bindsym $mod+4 workspace 4 Ide
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+4 workspace 4 Wiki
+bindsym $mod+5 workspace 5 Doc
+bindsym $mod+6 workspace 6 Ref
+bindsym $mod+7 workspace 7 Log
+bindsym $mod+8 workspace 8 Mon
+bindsym $mod+9 workspace 9 Mail
+bindsym $mod+0 workspace 10 Web
+bindsym $mod+minus scratchpad show
+
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move workspace 1 Terminal
-bindsym $mod+Shift+at move workspace 2 Web
+bindsym $mod+Shift+at move workspace 2 Ide
 bindsym $mod+Shift+numbersign move workspace 3 Test
-bindsym $mod+Shift+dollar move workspace 4 Ide
-bindsym $mod+Shift+percent move workspace 5
-bindsym $mod+Shift+asciicircum move workspace 6
-bindsym $mod+Shift+ampersand move workspace 7
-bindsym $mod+Shift+asterisk move workspace 8
-bindsym $mod+Shift+parenleft move workspace 9
-bindsym $mod+Shift+parenright move workspace 10
+bindsym $mod+Shift+dollar move workspace 4 Wiki
+bindsym $mod+Shift+percent move workspace 5 Doc
+bindsym $mod+Shift+asciicircum move workspace 6 Ref
+bindsym $mod+Shift+ampersand move workspace 7 Log
+bindsym $mod+Shift+asterisk move workspace 8 Mon
+bindsym $mod+Shift+parenleft move workspace 9 Mail
+bindsym $mod+Shift+parenright move workspace 10 Web
+bindsym $mod+Shift+minus move scratchpad
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exit
+bindsym $mod+Shift+BackSpace exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -116,17 +121,17 @@ mode "resize" {
         # when pressing left, the window is resized so that it has
         # more space on its left
 
-bindsym j resize shrink left 10 px or 10 ppt
-bindsym Shift+J resize grow   left 10 px or 10 ppt
+bindsym Shift+H resize shrink left 10 px or 10 ppt
+bindsym h resize grow   left 10 px or 10 ppt
 
-bindsym k resize shrink down 10 px or 10 ppt
-bindsym Shift+K resize grow   down 10 px or 10 ppt
+bindsym Shift+J resize shrink down 10 px or 10 ppt
+bindsym j resize grow   down 10 px or 10 ppt
 
-bindsym l resize shrink up 10 px or 10 ppt
-bindsym Shift+L resize grow   up 10 px or 10 ppt
+bindsym Shift+K resize shrink up 10 px or 10 ppt
+bindsym k resize grow   up 10 px or 10 ppt
 
-bindsym semicolon resize shrink right 10 px or 10 ppt
-bindsym Shift+colon resize grow   right 10 px or 10 ppt
+bindsym Shift+L resize shrink right 10 px or 10 ppt
+bindsym l resize grow   right 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
 bindsym Left resize shrink left 10 px or 10 ppt
@@ -154,11 +159,12 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id clipit
 exec  xset r rate  230 30
 exec setxkbmap -layout us -variant sve
-# font xft:Droid Sans Mono 10
+font xft:Droid Sans Mono 9
 # font pango: Ubuntu Mono 13
 # Monospace\ 11
 # font pango: Monospace 8
-# font pango: Ubuntu Mono 11
+# font pango: Ubuntu Monospace 9
+# font pango: DejaVu Sans Mono 9
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
