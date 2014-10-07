@@ -1,0 +1,4 @@
+#!/bin/sh
+#This does not seams to be executed
+xset rate  230 30
+setxkbmap -layout us -variant sve
