@@ -139,4 +139,8 @@ source ~/dotfiles/unix/environment
 ```
 
 
-
+##GIT
+```
+[include]
+  path = ~/dotfiles/git/gitconfig
+```
