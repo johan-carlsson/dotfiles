@@ -98,7 +98,12 @@ fi
 source ~/.alias
 ```
 
-
+##Git 
+Add this to .gitconfig
+```
+[include]
+  path = ~/dotfiles/git/gitconfig
+```
 
 ##Tmux
 ```
@@ -138,9 +143,3 @@ Add this line to .bashrc or .zshrc
 source ~/dotfiles/unix/environment
 ```
 
-
-##GIT
-```
-[include]
-  path = ~/dotfiles/git/gitconfig
-```
