@@ -21,6 +21,12 @@ env GIT_SSL_NO_VERIFY=true git submodule update
 git submodule add  http://github.com/godlygeek/tabular.git vim/bundle/tabular
 ```
 
+###Update git submodules
+```
+git submodule foreach git pull origin master
+```
+
+
 ##Vim 
 Delete or move old .vim folder
 
