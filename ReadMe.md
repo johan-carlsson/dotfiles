@@ -107,6 +107,11 @@ Add this to .gitconfig
 ```
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ```
+And add this line to .bashrc or .zshrc
+
+```
+source ~/dotfiles/tmux/alias
+```
 
 ##Ack
 ```
@@ -139,5 +144,13 @@ Add this line to .bashrc or .zshrc
 
 ```
 source ~/dotfiles/unix/environment
+```
+
+##Gnome-terminal
+Install solarized colors to gnome-terminal with ~/dotfiles/linux/gnome-terminal/gnome-terminal-colors-solarized/install.sh 
+And add this line to .bashrc or .zshrc
+
+```
+source ~/dotfiles/linux/gnome-terminal/bashrc
 ```
 
