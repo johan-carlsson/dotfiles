@@ -103,3 +103,9 @@
 [submodule "vim/bundle/exchange"]
 	path = vim/bundle/exchange
 	url = http://github.com/tommcdo/vim-exchange
+[submodule "linux/gnome-terminal/gnome-terminal-colors-solarized"]
+	path = linux/gnome-terminal/gnome-terminal-colors-solarized
+	url = http://github.com/Anthony25/gnome-terminal-colors-solarized
+[submodule "linux/gnome-terminal/dircolors-solarized"]
+	path = linux/gnome-terminal/dircolors-solarized
+	url = http://github.com/seebi/dircolors-solarized.git
