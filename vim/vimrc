@@ -46,6 +46,13 @@ autocmd BufLeave,FocusLost * silent! wall
 set autowrite
 set autoread
 
+"Directories for swap,undo and backup
+set directory=$HOME/.local/share/vim/swap
+set backupdir=$HOME/.local/share/vim/backup
+set undodir=$HOME/.local/share/vim/undo
+
+
+
 " General options }}}
 
 " Colour in terminal mode {{{

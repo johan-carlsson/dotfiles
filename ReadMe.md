@@ -48,14 +48,6 @@ so $HOME/dotfiles/vim/gvimrc
 
 Create undo,swap and undo dirs 
 
-Mac
-
-```
-mkdir -p ~/Library/Vim/{swap,backup,undo}
-
-```
-
-Linux
 
 ```
 mkdir -p ~/.local/share/vim/{swap,backup,undo}
