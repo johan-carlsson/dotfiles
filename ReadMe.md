@@ -15,10 +15,8 @@ env GIT_SSL_NO_VERIFY=true git submodule update
 ```
 
 ###Add git submodule
-****Don't forget to use the http:// protocoll due to issues with proxys****
- 
 ```
-git submodule add  http://github.com/godlygeek/tabular.git vim/bundle/tabular
+git submodule add  https://github.com/godlygeek/tabular.git vim/bundle/tabular
 ```
 
 ###Update git submodules

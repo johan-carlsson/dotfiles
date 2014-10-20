@@ -3,109 +3,109 @@
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
+	url = https://github.com/sjl/gundo.vim.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/tpope-vim-ragtag"]
 	path = vim/bundle/tpope-vim-ragtag
-	url = http://github.com/tpope/vim-ragtag.git
+	url = https://github.com/tpope/vim-ragtag.git
   ignore = untracked
 [submodule "vim/bundle/tpope-vim-rails"]
 	path = vim/bundle/tpope-vim-rails
-	url = http://github.com/tpope/vim-rails.git
+	url = https://github.com/tpope/vim-rails.git
 [submodule "vim/bundle/tpope-vim-surround"]
 	path = vim/bundle/tpope-vim-surround
-	url = http://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/tsaleh-vim-tcomment"]
 	path = vim/bundle/tsaleh-vim-tcomment
-	url = http://github.com/tsaleh/vim-tcomment.git
+	url = https://github.com/tsaleh/vim-tcomment.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
-	url = http://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
-	url = http://github.com/tpope/vim-commentary.git
+	url = https://github.com/tpope/vim-commentary.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
-	url = http://github.com/godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular.git
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
-	url = http://github.com/tpope/vim-unimpaired.git
+	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
-	url = http://github.com/vim-scripts/vimwiki.git
+	url = https://github.com/vim-scripts/vimwiki.git
   ignore = untracked
 [submodule "vim/bundle/speeddating"]
 	path = vim/bundle/speeddating
-	url = http://github.com/tpope/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
-	url = http://github.com/tpope/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
-	url = http://github.com/ervandew/supertab
+	url = https://github.com/ervandew/supertab
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
-	url = http://github.com/Lokaltog/vim-easymotion.git
+	url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule "vim/bundle/ZoomWin"]
 	path = vim/bundle/ZoomWin
 	url = https://github.com/itspriddle/ZoomWin.git
   ignore = untracked
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
-	url = http://github.com/tpope/vim-repeat.git
+	url = https://github.com/tpope/vim-repeat.git
 [submodule "vim/bundle/sensible"]
 	path = vim/bundle/sensible
-	url = http://github.com/tpope/vim-sensible.git
+	url = https://github.com/tpope/vim-sensible.git
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = http://github.com/scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/rvm"]
 	path = vim/bundle/rvm
-	url = http://github.com/tpope/vim-rvm.git
+	url = https://github.com/tpope/vim-rvm.git
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
-	url = http://github.com/tpope/vim-abolish.git
+	url = https://github.com/tpope/vim-abolish.git
 [submodule "vim/bundle/rubytest"]
 	path = vim/bundle/rubytest
-	url = http://github.com/janx/vim-rubytest
+	url = https://github.com/janx/vim-rubytest
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
-	url = http://github.com/wincent/Command-T.git
+	url = https://github.com/wincent/Command-T.git
 [submodule "vim/bundle/elixir"]
 	path = vim/bundle/elixir
-	url = http://github.com/elixir-lang/vim-elixir.git
+	url = https://github.com/elixir-lang/vim-elixir.git
 [submodule "vim/bundle/elixir-snippets"]
 	path = vim/bundle/elixir-snippets
-	url = http://github.com/carlosgaldino/elixir-snippets.git
+	url = https://github.com/carlosgaldino/elixir-snippets.git
 [submodule "vim/bundle/io"]
 	path = vim/bundle/io
-	url = http://github.com/xhr/vim-io.git
+	url = https://github.com/xhr/vim-io.git
 [submodule "vim/bundle/prolog"]
 	path = vim/bundle/prolog
-	url = http://github.com/adimit/prolog.vim.git
+	url = https://github.com/adimit/prolog.vim.git
 [submodule "vim/bundle/scala"]
 	path = vim/bundle/scala
-	url = http://github.com/derekwyatt/vim-scala
+	url = https://github.com/derekwyatt/vim-scala
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
-	url = http://github.com/rking/ag.vim
+	url = https://github.com/rking/ag.vim
 [submodule "vim/bundle/vitaity"]
 	path = vim/bundle/vitaity
-	url = http://github.com/sjl/vitality.vim
+	url = https://github.com/sjl/vitality.vim
 [submodule "vim/bundle/vim-space"]
 	path = vim/bundle/vim-space
-	url = http://github.com/spiiph/vim-space
+	url = https://github.com/spiiph/vim-space
 [submodule "vim/bundle/exchange"]
 	path = vim/bundle/exchange
-	url = http://github.com/tommcdo/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange
 [submodule "linux/gnome-terminal/gnome-terminal-colors-solarized"]
 	path = linux/gnome-terminal/gnome-terminal-colors-solarized
-	url = http://github.com/Anthony25/gnome-terminal-colors-solarized
+	url = https://github.com/Anthony25/gnome-terminal-colors-solarized
 [submodule "linux/gnome-terminal/dircolors-solarized"]
 	path = linux/gnome-terminal/dircolors-solarized
-	url = http://github.com/seebi/dircolors-solarized.git
+	url = https://github.com/seebi/dircolors-solarized.git
