@@ -77,6 +77,8 @@ function! asynchandler#split()
     let env = {}
     function env.get(temp_file_name) dict
         exec "split " . a:temp_file_name
+        normal G
+        redraw! 
         silent! wincmd p
     endfunction
     return asynccommand#tab_restore(env)
