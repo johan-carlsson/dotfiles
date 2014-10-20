@@ -1,0 +1,5 @@
+	@Test
+	public void transform${1:what}() throws Exception {
+		assertXMLEquals("/${2:expect}.xml", transform(
+		        "/${3:input}.xml", "/${4:how}.xsl"));
+	}

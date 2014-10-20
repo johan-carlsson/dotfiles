@@ -1,0 +1,5 @@
+	@Test
+	public void ${1:what}ShouldBeValid() throws Exception {
+		assertValidXML("/${2:kind}/$1.xml",
+		        "/schema/$2/$1.xsd");
+	}
