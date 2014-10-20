@@ -101,6 +101,7 @@ map <LocalLeader>l <Plug>RubyTestRunLast " change from <Leader>l to <Leader>/
 augroup file
   autocmd!
   autocmd BufRead,BufNewFile,BufEnter jboss-esb.xml setlocal filetype=jboss-esb syntax=xml foldmethod=syntax foldlevel=99
+  autocmd BufRead,BufNewFile,BufEnter *.wsdl setlocal syntax=xml foldmethod=syntax foldlevel=99
   "Auto source vimrc files
   autocmd bufwritepost .vimrc,vimrc source $MYVIMRC
   autocmd bufwritepost .gvimrc,gvimrc source $MYGVIMRC
