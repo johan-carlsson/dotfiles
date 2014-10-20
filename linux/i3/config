@@ -85,7 +85,7 @@ bindsym $mod+2 workspace 2 Ide
 bindsym $mod+3 workspace 3 Test
 bindsym $mod+4 workspace 4 Wiki
 bindsym $mod+5 workspace 5 Doc
-bindsym $mod+6 workspace 6 Ref
+bindsym $mod+6 workspace 6 Scrap
 bindsym $mod+7 workspace 7 Log
 bindsym $mod+8 workspace 8 Mon
 bindsym $mod+9 workspace 9 Mail
@@ -99,7 +99,7 @@ bindsym $mod+Shift+at move workspace 2 Ide
 bindsym $mod+Shift+numbersign move workspace 3 Test
 bindsym $mod+Shift+dollar move workspace 4 Wiki
 bindsym $mod+Shift+percent move workspace 5 Doc
-bindsym $mod+Shift+asciicircum move workspace 6 Ref
+bindsym $mod+Shift+asciicircum move workspace 6 Scrap
 bindsym $mod+Shift+ampersand move workspace 7 Log
 bindsym $mod+Shift+asterisk move workspace 8 Mon
 bindsym $mod+Shift+parenleft move workspace 9 Mail
@@ -157,7 +157,7 @@ bindsym $mod+r mode "resize"
 # setxkbmap -layout se,us
 # setxkbmap -option 'grp:ctrl_alt_toggle'
 exec --no-startup-id clipit
-exec  xset r rate  230 30
+exec  xset r rate  230 50
 exec setxkbmap -layout us -variant sve
 font xft:Droid Sans Mono 9
 # font pango: Ubuntu Mono 13
