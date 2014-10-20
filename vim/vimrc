@@ -235,10 +235,16 @@ function! XmlChangeNamespacePrefix(from,to)
     execute '%s/\v\<(\w+)>' . a:from . from_separator .'/<' . a:to . to_separator .'\1/ge'
     execute '%s/\v\<\/(\w+)>' . a:from . from_separator .'/<\/' . a:to . to_separator .'\1/ge'
     execute '%s/xmlns=/xmlns' . to_separator . a:to . '=/ge'
+    execute '%s/type="' . a:from . from_separator . '/type="' . a:to . to_separator . '/ge'
+    execute '%s/ref="' . a:from . from_separator . '/ref="' . a:to . to_separator . '/ge'
+    execute '%s/base="' . a:from . from_separator . '/base="' . a:to . to_separator . '/ge'
   else
     execute '%s/\v\<(\?)@!' . a:from . from_separator .'/<' . a:to . to_separator .'/ge'
     execute '%s/<\/' . a:from . from_separator .'/<\/' . a:to . to_separator . '/ge'
     execute '%s/xmlns' . from_separator . a:from . '=/xmlns' . to_separator . a:to . '=/ge'
+    execute '%s/type="' . a:from . from_separator . '/type="' . a:to . to_separator . '/ge'
+    execute '%s/ref="' . a:from . from_separator . '/ref="' . a:to . to_separator . '/ge'
+    execute '%s/base="' . a:from . from_separator . '/base="' . a:to . to_separator . '/ge'
   endif
 endfunction
 " }}}
