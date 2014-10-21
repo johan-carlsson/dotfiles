@@ -115,3 +115,6 @@
 [submodule "tmux/tmux-colors-solarized"]
 	path = tmux/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
+[submodule "linux/i3/i3bgbar"]
+	path = linux/i3/i3bgbar
+	url = https://github.com/S0lll0s/i3bgbar.git
