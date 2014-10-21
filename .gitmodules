@@ -109,3 +109,6 @@
 [submodule "linux/gnome-terminal/dircolors-solarized"]
 	path = linux/gnome-terminal/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "powerline/powerline"]
+	path = powerline/powerline
+	url = https://github.com/Lokaltog/powerline
