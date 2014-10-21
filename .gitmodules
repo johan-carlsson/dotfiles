@@ -112,3 +112,6 @@
 [submodule "powerline/powerline"]
 	path = powerline/powerline
 	url = https://github.com/Lokaltog/powerline
+[submodule "tmux/tmux-colors-solarized"]
+	path = tmux/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized
