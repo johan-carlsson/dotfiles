@@ -152,3 +152,12 @@ And add this line to .bashrc or .zshrc
 source ~/dotfiles/linux/gnome-terminal/bashrc
 ```
 
+##Powerline
+```
+ln -s ~/dotfiles/powerline/config ~/.config/powerline
+cp  ~/dotfiles/powerline/fonts/PowerlineSymbols.otf ~/.fonts/
+sudo fc-cache -vf ~/.fonts/
+cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+```
+Logout or restart
+
