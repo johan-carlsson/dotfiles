@@ -59,7 +59,7 @@ set undodir=$HOME/.local/share/vim/undo
 
 if !has('gui_running')
     "Use light background
-    set background=light
+    set background=dark
     " More colors in terminal 
     set t_Co=256
 endif
