@@ -154,6 +154,10 @@ source ~/dotfiles/linux/gnome-terminal/bashrc
 
 ##Powerline
 ```
+~/dotfiles/powerline/powerline
+python setup.py install
+sudo python setup.py install
+
 ln -s ~/dotfiles/powerline/config ~/.config/powerline
 cp  ~/dotfiles/powerline/fonts/PowerlineSymbols.otf ~/.fonts/
 sudo fc-cache -vf ~/.fonts/
