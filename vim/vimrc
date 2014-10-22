@@ -96,7 +96,7 @@ map <LocalLeader>l <Plug>RubyTestRunLast " change from <Leader>l to <Leader>/
 
 
 " Powerline
-set rtp+=$HOME/dotfiles/powerline/powerline/bindings/vim
+set rtp+=$HOME/dotfiles/powerline/powerline/powerline/bindings/vim
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
