@@ -50,6 +50,7 @@ set autoread
 set directory=$HOME/.local/share/vim/swap
 set backupdir=$HOME/.local/share/vim/backup
 set undodir=$HOME/.local/share/vim/undo
+set undofile
 
 
 
@@ -59,7 +60,7 @@ set undodir=$HOME/.local/share/vim/undo
 
 if !has('gui_running')
     "Use light background
-    set background=light
+    set background=dark
     " More colors in terminal 
     set t_Co=256
 endif
