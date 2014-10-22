@@ -50,6 +50,7 @@ set autoread
 set directory=$HOME/.local/share/vim/swap
 set backupdir=$HOME/.local/share/vim/backup
 set undodir=$HOME/.local/share/vim/undo
+set undofile
 
 
 
@@ -162,7 +163,7 @@ nnoremap <F4> :NERDTreeFind<CR>
 
 "Command-t
 "Find file
-nnoremap <silent> <Leader>ff :CommandT<CR>
+nnoremap <silent> <Leader>ff :CommandT .<CR>
 "Find buffer
 nnoremap <silent> <Leader>fb :CommandTBuffer<CR>
 "Find tag
