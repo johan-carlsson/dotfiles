@@ -161,3 +161,16 @@ cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.config/fontconfig/co
 ```
 Logout or restart
 
+
+###Powerline i3
+``` 
+cd ~/dotfiles/linux/i3/i3bgbar
+make
+sudo make install
+
+cd ~/dotfiles/linux/i3/i3-py
+python setup.py build
+sudo python setup.py install
+```
+
+
