@@ -153,11 +153,18 @@ source ~/dotfiles/linux/gnome-terminal/bashrc
 ```
 
 ##Powerline
+Add this to .bashrc
+```
+source ~/dotfiles/powerline/bashrc
+```
+Run these commands
 ```
 ln -s ~/dotfiles/powerline/config ~/.config/powerline
 cp  ~/dotfiles/powerline/fonts/PowerlineSymbols.otf ~/.fonts/
 sudo fc-cache -vf ~/.fonts/
 cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+#OR (For older versions)
+cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.fonts.conf.d/
 ```
 Logout or restart
 
