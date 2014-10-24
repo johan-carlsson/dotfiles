@@ -160,10 +160,9 @@ source ~/dotfiles/powerline/bashrc
 Run these commands
 ```
 ~/dotfiles/powerline/powerline
-python setup.py install
 sudo python setup.py install
 
-ln -s ~/dotfiles/powerline/config ~/.config/powerline
+ln -s ~/dotfiles/powerline/config ~/.config/powerline/
 cp  ~/dotfiles/powerline/fonts/PowerlineSymbols.otf ~/.fonts/
 sudo fc-cache -vf ~/.fonts/
 cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
