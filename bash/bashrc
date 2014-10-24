@@ -6,3 +6,6 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 
+# Disable flow control(crtl-q ctrl-s)
+stty -ixon
+
