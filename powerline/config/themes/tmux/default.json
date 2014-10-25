@@ -8,13 +8,6 @@
           "seconds_format": ""
         }
       },
-      {
-        "name": "date",
-        "args": {
-          "format": "%H:%M",
-          "istime": true
-        }
-			},
 			{
 				"function": "powerline.segments.common.sys.system_load",
 				"priority": 50
