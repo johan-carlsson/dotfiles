@@ -162,9 +162,12 @@ Run these commands
 ~/dotfiles/powerline/powerline
 sudo python setup.py install
 
-ln -s ~/dotfiles/powerline/config ~/.config/powerline/
+mkdir ~/.config/
+ln -s ~/dotfiles/powerline/config ~/.config/powerline
+mkdir ~/.fonts
 cp  ~/dotfiles/powerline/fonts/PowerlineSymbols.otf ~/.fonts/
 sudo fc-cache -vf ~/.fonts/
+mkdir -p ~/.config/fontconfig/conf.d/
 cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 #OR (For older versions)
 cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.fonts.conf.d/
