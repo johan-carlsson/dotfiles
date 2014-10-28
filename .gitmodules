@@ -7,10 +7,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/tpope-vim-ragtag"]
-	path = vim/bundle/tpope-vim-ragtag
-	url = https://github.com/tpope/vim-ragtag.git
-  ignore = untracked
 [submodule "vim/bundle/tpope-vim-rails"]
 	path = vim/bundle/tpope-vim-rails
 	url = https://github.com/tpope/vim-rails.git
