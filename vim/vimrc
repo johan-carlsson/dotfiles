@@ -142,12 +142,18 @@ augroup END
 " Folding }}}
 
 " Spelling {{{
-
+highlight clear SpellBad
+highlight clear SpellCap 
+highlight clear SpellRare
+highlight clear SpellLocal
+highlight SpellBad cterm=underline
+highlight SpellCap cterm=underline
+highlight SpellRare cterm=underline
+highlight SpellLocal cterm=underline
 
 augroup spelling
     autocmd!
     autocmd FileType elixir setlocal spell spelllang=elixir
-    autocmd FileType elixir highlight clear SpellCap
 augroup END
 
 " Spelling }}}
