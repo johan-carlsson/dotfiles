@@ -111,3 +111,9 @@
 [submodule "tmux/tmux-colors-solarized"]
 	path = tmux/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
+[submodule "vim/bundle/bufexplorer"]
+	path = vim/bundle/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "powerline/powerline-fonts"]
+	path = powerline/powerline-fonts
+	url = https://github.com/Lokaltog/powerline-fonts.git

@@ -159,15 +159,24 @@ source ~/dotfiles/powerline/bashrc
 ```
 Run these commands
 ```
+sudo pip install psutil
 ~/dotfiles/powerline/powerline
 sudo python setup.py install
 
-ln -s ~/dotfiles/powerline/config ~/.config/powerline/
+mkdir ~/.config/
+ln -s ~/dotfiles/powerline/config ~/.config/powerline
+mkdir ~/.fonts
+#Linux
 cp  ~/dotfiles/powerline/fonts/PowerlineSymbols.otf ~/.fonts/
 sudo fc-cache -vf ~/.fonts/
+mkdir -p ~/.config/fontconfig/conf.d/
 cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 #OR (For older versions)
 cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.fonts.conf.d/
+#Mac OS X
+(Click on selected font in ~/dotfiles/powerline/powerline-fonts)
 ```
+
+
 Logout or restart
 
