@@ -102,6 +102,10 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 
+" Eclim
+" Disable eclim, enable by unlet:g:EclimDisable in project .vimrc 
+let g:EclimDisabled=1
+
 "}}}
 
 " File settings{{{
@@ -138,12 +142,18 @@ augroup END
 " Folding }}}
 
 " Spelling {{{
-
+highlight clear SpellBad
+highlight clear SpellCap 
+highlight clear SpellRare
+highlight clear SpellLocal
+highlight SpellBad cterm=underline
+highlight SpellCap cterm=underline
+highlight SpellRare cterm=underline
+highlight SpellLocal cterm=underline
 
 augroup spelling
     autocmd!
     autocmd FileType elixir setlocal spell spelllang=elixir
-    autocmd FileType elixir highlight clear SpellCap
 augroup END
 
 " Spelling }}}
@@ -278,5 +288,4 @@ endfunction
 " }}}
 
 "}}}
-
 
