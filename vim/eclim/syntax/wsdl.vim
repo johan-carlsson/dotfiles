@@ -1,7 +1,7 @@
 " Author:  Eric Van Dewoestine
 "
 " Description: {{{
-"  Syntax file for maven's project.xml files.
+"  Syntax file for wsdl files.
 "
 " License:
 "

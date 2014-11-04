@@ -4,7 +4,7 @@
 "
 " License:
 "
-" Copyright (C) 2005 - 2013  Eric Van Dewoestine
+" Copyright (C) 2005 - 2014  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -206,7 +206,8 @@ function! eclim#project#util#ProjectImport(arg) " {{{
   if result != '0'
     let project = eclim#project#util#GetProject(folder)
     if !len(natureIds)
-      let natureIds = eclim#project#util#GetProjectNatureAliases(project)
+      let natureIds = eclim#project#util#GetProjectNatureAliases(
+        \ get(project, 'name', ''))
     endif
     call s:ProjectNatureHooks(natureIds, 'ProjectImportPost', [project])
     call eclim#util#Echo(result)
@@ -241,7 +242,7 @@ function! eclim#project#util#ProjectRename(args) " {{{
   else
     let response = eclim#util#PromptConfirm(
       \ printf("Rename project '%s' to '%s'", project, name),
-      \ g:EclimInfoHighlight)
+      \ g:EclimHighlightInfo)
   endif
 
   if response == 1
@@ -275,7 +276,7 @@ function! eclim#project#util#ProjectMove(args) " {{{
   else
     let response = eclim#util#PromptConfirm(
       \ printf("Move project '%s' to '%s'", project, dir),
-      \ g:EclimInfoHighlight)
+      \ g:EclimHighlightInfo)
   endif
 
   if response == 1
@@ -457,7 +458,9 @@ endfunction " }}}
 function! eclim#project#util#ProjectStatusLine() " {{{
   " Includes status information for the current file to VIM status
 
-  let project = eclim#project#util#GetProject(expand('%:p'))
+  " don't ever display errors since this is called from the user's status
+  " line.
+  silent! let project = eclim#project#util#GetProject(expand('%:p'))
   if !empty(project)
     let status = g:EclimProjectStatusLine
     while status =~ '\${\w\+}'
@@ -478,6 +481,7 @@ function! eclim#project#util#ProjectStatusLine() " {{{
     endwhile
     return status
   endif
+  return ''
 endfunction " }}}
 
 function! eclim#project#util#ProjectOpen(name) " {{{
@@ -539,7 +543,11 @@ function! eclim#project#util#ProjectList(workspace) " {{{
 endfunction " }}}
 
 function! eclim#project#util#ProjectNatures(project) " {{{
-  " Prints nature info one or all projects.
+  " Prints nature info of one or all projects.
+
+  if !eclim#EclimAvailable()
+    return
+  endif
 
   let command = s:command_natures
   if a:project != ''
@@ -583,7 +591,30 @@ function! eclim#project#util#ProjectNatureModify(command, args) " {{{
   let args = eclim#util#ParseCmdLine(a:args)
 
   let project = args[0]
+  if eclim#project#util#GetProjectRoot(project) == ''
+    call eclim#util#EchoError('Project not found: ' . project)
+    return
+  endif
+
   let natures = args[1:]
+  if len(natures) == 0
+    call eclim#util#EchoError('Please supply at least one nature alias.')
+    return
+  else
+    let aliases = eclim#project#util#GetNatureAliasesDict()
+    let invalid = []
+    for nature in natures
+      if !has_key(aliases, nature)
+        call add(invalid, nature)
+      endif
+    endfor
+    if len(invalid) > 0
+      call eclim#util#EchoError(
+        \ 'One or more unrecognized nature aliases: ' . join(invalid, ','))
+      return
+    endif
+  endif
+
   let command = a:command == 'add' ? s:command_nature_add : s:command_nature_remove
   let command = substitute(command, '<project>', project, '')
   let command = substitute(command, '<natures>', join(natures, ','), '')
@@ -624,7 +655,7 @@ function! eclim#project#util#ProjectSettings(project) " {{{
     return
   endif
 
-  let content = ['# Settings for project: eclim', '']
+  let content = ['# Settings for project: ' . project, '']
   let path = ''
   for setting in settings
     if setting.path != path
@@ -746,7 +777,9 @@ function! eclim#project#util#ProjectTab(project) " {{{
     let is_project = 0
     let dir = expand(project, ':p')
     if !isdirectory(dir)
-      call eclim#util#EchoError("No project '" . project . "' found.")
+      if eclim#EclimAvailable(0)
+        call eclim#util#EchoError("No project '" . project . "' found.")
+      endif
       return
     endif
     let project = fnamemodify(substitute(dir, '/$', '', ''), ':t')
@@ -835,22 +868,36 @@ function! eclim#project#util#GetCurrentProjectName() " {{{
   return len(project) > 0 ? project.name : ''
 endfunction " }}}
 
-function! eclim#project#util#GetCurrentProjectRoot() " {{{
-  " Gets the project root dir for the project that the current file is in.
-  let project = eclim#project#util#GetProject(expand('%:p'))
+function! eclim#project#util#GetCurrentProjectRoot(...) " {{{
+  " Gets the project root dir for the project that the current or supplied
+  " file is in.
+  let path = len(a:000) > 0 ? a:000[0] : expand('%:p')
+  let project = eclim#project#util#GetProject(path)
   return len(project) > 0 ? project.path : ''
 endfunction " }}}
 
 function! eclim#project#util#GetProjectWorkspace(name) " {{{
   " Gets the workspace that a project belongs to.
-  let project = {}
-  for p in eclim#project#util#GetProjects()
-    if p.name == a:name
-      let project = p
-      break
-    endif
+
+  " ensure s:workspace_projects is initialized
+  call eclim#project#util#GetProjects()
+
+  " loop through each workspace since the same project name could be used in
+  " more than one workspace.
+  let workspaces = []
+  for [workspace, projects] in items(s:workspace_projects)
+    for p in projects
+      if p.name == a:name
+        call add(workspaces, workspace)
+        break
+      endif
+    endfor
   endfor
-  return get(project, 'workspace', '')
+
+  if len(workspaces) > 1
+    return workspaces
+  endif
+  return len(workspaces) ? workspaces[0] : ''
 endfunction " }}}
 
 function! eclim#project#util#GetProjectRelativeFilePath(...) " {{{
@@ -896,12 +943,7 @@ function! eclim#project#util#GetProjects() " {{{
   "   name: The name of the project.
   "   path: The root path of the project.
   "   links: List of linked paths.
-
   let instances = eclim#client#nailgun#GetEclimdInstances()
-  if type(instances) != g:DICT_TYPE
-    let s:workspace_projects = {}
-    return []
-  endif
 
   if keys(s:workspace_projects) != keys(instances)
     let s:workspace_projects = {}
@@ -977,6 +1019,10 @@ function! eclim#project#util#GetProject(path) " {{{
       return project
     endif
 
+    if has_key(project, 'link') && path =~ '^' . project.link . pattern
+      return project
+    endif
+
     " check linked folders
     for name in keys(get(project, 'links', {}))
       if path =~ '^' . project.links[name] . pattern
@@ -1025,13 +1071,12 @@ function! eclim#project#util#GetProjectNames(...) " {{{
       let projects += results
     endfor
 
-    call map(projects, "v:val.name")
-    return projects
+    let names = map(projects, "v:val.name")
+  else
+    let names = map(eclim#project#util#GetProjects(), 'v:val.name')
   endif
 
-  let names = map(eclim#project#util#GetProjects(), 'v:val.name')
-  call sort(names)
-  return names
+  return eclim#util#ListDedupe(sort(names))
 endfunction " }}}
 
 function! eclim#project#util#GetProjectNatureAliases(...) " {{{
@@ -1129,8 +1174,18 @@ function! eclim#project#util#IsCurrentFileInProject(...) " {{{
   " Optional args:
   "   echo_error (default: 1): when non-0, echo an error to the user if project
   "                            could not be determined.
-  if eclim#project#util#GetCurrentProjectName() == ''
-    if (a:0 == 0 || a:1) && g:eclimd_running
+
+  let echo = a:0 ? a:1 : 1
+  if !echo
+    silent let project = eclim#project#util#GetCurrentProjectName()
+  else
+    let project = eclim#project#util#GetCurrentProjectName()
+  endif
+
+  if project == ''
+    " if eclimd isn't available, then that could be the reason the project
+    " couldn't be determined, so don't hide that message with this one.
+    if echo && eclim#EclimAvailable(0)
       call eclim#util#EchoError('Unable to determine the project. ' .
         \ 'Check that the current file is in a valid project.')
     endif
@@ -1168,7 +1223,9 @@ function! eclim#project#util#RefreshFile() " {{{
 endfunction " }}}
 
 function! eclim#project#util#UnableToDetermineProject() " {{{
-  if g:eclimd_running
+  " if eclimd isn't available, then that could be the reason the project
+  " couldn't be determined, so don't hide that message with this one.
+  if eclim#EclimAvailable(0)
     call eclim#util#EchoError("Unable to determine the project. " .
       \ "Please specify a project name or " .
       \ "execute from a valid project directory.")
