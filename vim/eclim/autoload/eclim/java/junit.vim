@@ -5,7 +5,7 @@
 "
 " License:
 "
-" Copyright (C) 2005 - 2013  Eric Van Dewoestine
+" Copyright (C) 2005 - 2014  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -42,6 +42,12 @@ function! eclim#java#junit#JUnit(test, bang) " {{{
 
   if project == ''
     call eclim#project#util#IsCurrentFileInProject()
+    return
+  endif
+
+  Validate
+  if len(getloclist(0)) > 0
+    call eclim#util#EchoError('Test case contains validation errors.')
     return
   endif
 
@@ -120,7 +126,7 @@ function! eclim#java#junit#JUnitResult(test) " {{{
   if path == ''
     call eclim#util#EchoWarning(
       \ "Output directory setting for 'junit' not set. " .
-      \ "Use :EclimSettings or :ProjectSettings to set it.")
+      \ "Use :WorkspaceSettings or :ProjectSettings to set it.")
     return
   endif
 
@@ -233,7 +239,7 @@ function! eclim#java#junit#CommandCompleteResult(argLead, cmdLine, cursorPos) " 
   if path == ''
     call eclim#util#EchoWarning(
       \ "Output directory setting for 'junit' not set. " .
-      \ "Use :EclimSettings or :ProjectSettings to set it.")
+      \ "Use :WorkspaceSettings or :ProjectSettings to set it.")
     return []
   endif
 

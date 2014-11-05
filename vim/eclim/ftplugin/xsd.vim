@@ -1,10 +1,8 @@
 " Author:  Eric Van Dewoestine
 "
-" Description: {{{
+" License: {{{
 "
-" License:
-"
-" Copyright (C) 2005 - 2012  Eric Van Dewoestine
+" Copyright (C) 2005 - 2014  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -21,15 +19,26 @@
 "
 " }}}
 
-" load any xml related functionality
-runtime! ftplugin/xml.vim
-runtime! indent/xml.vim
+" Autocmds {{{
+
+if g:EclimXsdValidate
+  augroup eclim_xsd_validate
+    autocmd! BufWritePost <buffer>
+    autocmd BufWritePost <buffer> call eclim#lang#Validate('xsd', 1)
+  augroup END
+endif
+
+" disable plain xml validation.
+augroup eclim_xml
+  autocmd! BufWritePost <buffer>
+augroup END
+
+" }}}
 
 " Command Declarations {{{
-if !exists(":MavenDependencySearch")
-  command -nargs=1 -buffer MavenDependencySearch
-    \ :call eclim#java#maven#Search('<args>', 'maven')
-endif
+
+command! -nargs=0 -buffer Validate :call eclim#lang#Validate('xsd', 0)
+
 " }}}
 
 " vim:ft=vim:fdm=marker

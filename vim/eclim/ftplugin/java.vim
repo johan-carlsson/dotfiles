@@ -1,11 +1,8 @@
 " Author:  Eric Van Dewoestine
 "
-" Description: {{{
-"   see http://eclim.org/vim/java/index.html
+" License: {{{
 "
-" License:
-"
-" Copyright (C) 2005 - 2013  Eric Van Dewoestine
+" Copyright (C) 2005 - 2014  Eric Van Dewoestine
 "
 " This program is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -20,30 +17,6 @@
 " You should have received a copy of the GNU General Public License
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 "
-" }}}
-
-" Global Variables {{{
-
-if !exists("g:EclimJavaValidate")
-  let g:EclimJavaValidate = 1
-endif
-
-if !exists("g:EclimJavaSetCommonOptions")
-  let g:EclimJavaSetCommonOptions = 1
-endif
-
-if !exists("g:EclimJavaCompilerAutoDetect")
-  let g:EclimJavaCompilerAutoDetect = 1
-endif
-
-if !exists("g:EclimJavaSyntasticEnabled")
-  let g:EclimJavaSyntasticEnabled = 0
-endif
-
-if !exists('g:EclimJavaCallHierarchyDefaultAction')
-  let g:EclimJavaCallHierarchyDefaultAction = g:EclimDefaultFileOpenAction
-endif
-
 " }}}
 
 " Options {{{
@@ -97,10 +70,7 @@ if g:EclimJavaCompilerAutoDetect
   endif
 endif
 
-" disable syntastic
-if exists('g:loaded_syntastic_plugin') && !g:EclimJavaSyntasticEnabled
-  let g:syntastic_java_checkers = []
-endif
+call eclim#lang#DisableSyntasticIfValidationIsEnabled('java')
 
 " }}}
 
@@ -194,16 +164,17 @@ endif
 
 if !exists(":JavaSearch")
   command -buffer -nargs=*
-    \ -complete=customlist,eclim#java#search#CommandCompleteJavaSearch
+    \ -complete=customlist,eclim#java#search#CommandCompleteSearch
     \ JavaSearch :call eclim#java#search#SearchAndDisplay('java_search', '<args>')
 endif
 if !exists(":JavaSearchContext")
-  command -buffer JavaSearchContext
-    \ :call eclim#java#search#SearchAndDisplay('java_search', '')
+  command -buffer -nargs=?
+    \ -complete=customlist,eclim#java#search#CommandCompleteSearchContext
+    \ JavaSearchContext :call eclim#java#search#SearchAndDisplay('java_search', '<args>')
 endif
 if !exists(":JavaDocSearch")
   command -buffer -nargs=*
-    \ -complete=customlist,eclim#java#search#CommandCompleteJavaSearch
+    \ -complete=customlist,eclim#java#search#CommandCompleteSearch
     \ JavaDocSearch :call eclim#java#search#SearchAndDisplay('java_docsearch', '<args>')
 endif
 
