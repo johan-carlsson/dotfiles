@@ -106,6 +106,10 @@ python del powerline_setup
 " Disable eclim, enable by unlet:g:EclimDisable in project .vimrc 
 let g:EclimDisabled=1
 
+" Gitgutter
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
 "}}}
 
 " File settings{{{
