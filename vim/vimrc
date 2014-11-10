@@ -109,6 +109,8 @@ let g:EclimDisabled=1
 " Gitgutter
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
+highlight clear SignColumn
+
 
 "}}}
 
