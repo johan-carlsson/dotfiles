@@ -142,7 +142,7 @@ augroup folding
     autocmd FileType xsd  setlocal foldmethod=syntax foldlevel=9
     autocmd FileType xslt setlocal foldmethod=syntax foldlevel=9
     autocmd FileType xsl  setlocal foldmethod=syntax foldlevel=9
-    autocmd FileType vim  setlocal foldmethod=marker
+    autocmd FileType vim  setlocal foldmethod=marker foldlevel=1
 augroup END
 
 " Folding }}}
