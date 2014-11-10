@@ -117,3 +117,6 @@
 [submodule "powerline/powerline-fonts"]
 	path = powerline/powerline-fonts
 	url = https://github.com/Lokaltog/powerline-fonts.git
+[submodule "vim/bundle/gitgutter"]
+	path = vim/bundle/gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

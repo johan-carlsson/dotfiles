@@ -106,6 +106,12 @@ python del powerline_setup
 " Disable eclim, enable by unlet:g:EclimDisable in project .vimrc 
 let g:EclimDisabled=1
 
+" Gitgutter
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+highlight clear SignColumn
+
+
 "}}}
 
 " File settings{{{
@@ -136,7 +142,9 @@ augroup folding
     autocmd FileType java setlocal foldmethod=syntax foldlevel=9
     autocmd FileType ruby setlocal foldmethod=syntax foldlevel=9
     autocmd FileType xsd  setlocal foldmethod=syntax foldlevel=9
-    autocmd FileType vim  setlocal foldmethod=marker
+    autocmd FileType xslt setlocal foldmethod=syntax foldlevel=9
+    autocmd FileType xsl  setlocal foldmethod=syntax foldlevel=9
+    autocmd FileType vim  setlocal foldmethod=marker foldlevel=1
 augroup END
 
 " Folding }}}
