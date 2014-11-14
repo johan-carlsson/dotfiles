@@ -187,6 +187,10 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :NERDTreeFind<CR>
 
+"TagList
+noremap <F6> :TlistToggle<CR>
+let Tlist_Display_Tag_Scope = 0
+
 "Command-t
 "Find file
 nnoremap <silent> <Leader>ff :CommandT .<CR>
