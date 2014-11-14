@@ -65,6 +65,12 @@ if !has('gui_running')
     set t_Co=256
 endif
 
+" Diff colours
+hi DiffText ctermbg=LightBlue
+hi DiffAdd ctermbg=LightBlue
+hi DiffChange ctermbg=LightCyan
+hi DiffDelete ctermfg=Blue ctermbg=LightCyan
+
 " }}}
 
 " Plugin settings and configuration  {{{
