@@ -38,6 +38,8 @@ set secure                        " disable unsafe commands in local .vimrc file
 
 set history=1000                  " Command line history
 
+set updatetime=750                " Time after stop typing before triggering events  
+
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
@@ -64,6 +66,12 @@ if !has('gui_running')
     " More colors in terminal 
     set t_Co=256
 endif
+
+" Diff colours
+hi DiffText ctermbg=LightBlue
+hi DiffAdd ctermbg=LightBlue
+hi DiffChange ctermbg=LightCyan
+hi DiffDelete ctermfg=Blue ctermbg=LightCyan
 
 " }}}
 
@@ -178,6 +186,10 @@ nnoremap <F5> :GundoToggle<CR>
 "NerdTree plugin
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :NERDTreeFind<CR>
+
+"TagList
+noremap <F6> :TlistToggle<CR>
+let Tlist_Display_Tag_Scope = 0
 
 "Command-t
 "Find file
