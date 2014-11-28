@@ -192,6 +192,7 @@ nnoremap <F4> :NERDTreeFind<CR>
 "TagList
 noremap <F6> :TlistToggle<CR>
 let Tlist_Display_Tag_Scope = 0
+let Tlist_Use_SingleClick = 1
 
 "Command-t
 "Find file
