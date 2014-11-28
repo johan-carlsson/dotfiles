@@ -216,7 +216,7 @@ nnoremap <Leader>jc :JavaCorrect<CR>
 nnoremap <Leader>ji :JavaImport<CR> 
 nnoremap <Leader>jr :ProjectRefresh<CR> 
 nnoremap <Leader>pr :ProjectRefresh<CR> 
-nnoremap ]j :JavaSearchContext<CR>
+nnoremap <C-j> :JavaSearchContext<CR>
 
 "Expand active files directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
