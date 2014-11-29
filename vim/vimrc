@@ -179,6 +179,10 @@ augroup END
 
 
 " Mappings {{{
+"Window
+noremap <C-w>" :split<cr>
+noremap <C-w><bar> :vsplit<cr>
+
 "Vimrc stuff
 nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
