@@ -42,9 +42,6 @@ set mouse=a                       " Allow mouse interaction in terminal
 
 set ttymouse=xterm2               " Reporting the mouse position while the mouse is dragged.
 
-" Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-
 "Autosave/Read
 autocmd BufLeave,FocusLost * silent! wall
 set autowrite
