@@ -70,10 +70,10 @@ endif
 highlight Folded ctermfg=LightGray ctermbg=244
 
 " Diff colours
-hi DiffText ctermbg=LightBlue
-hi DiffAdd ctermbg=LightBlue
-hi DiffChange ctermbg=LightCyan
-hi DiffDelete ctermfg=Blue ctermbg=LightCyan
+highlight DiffText ctermbg=LightBlue
+highlight DiffAdd ctermbg=LightBlue
+highlight DiffChange ctermbg=LightCyan
+highlight DiffDelete ctermfg=Blue ctermbg=LightCyan
 
 " }}}
 
