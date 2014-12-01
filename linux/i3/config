@@ -159,7 +159,7 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id clipit
 exec  xset r rate  230 50
 exec setxkbmap -layout us -variant sve
-font xft:Droid Sans Mono 10
+font xft:Droid Sans Mono 11
 # font pango: Ubuntu Mono 13
 # Monospace\ 11
 # font pango: Monospace 8
