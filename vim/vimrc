@@ -183,6 +183,8 @@ augroup END
 "Window
 noremap <C-w>" :split<cr>
 noremap <C-w><bar> :vsplit<cr>
+noremap <C-w><backspace> :close<cr>
+noremap <C-w><enter> :tabnew<cr>
 
 "Vimrc stuff
 nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
