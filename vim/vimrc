@@ -251,6 +251,8 @@ augroup mappings
 autocmd!
 "Canonicalize xml element. Change </test> into <test></test>
 autocmd Filetype xml,xstl,xsd nmap <leader>xc 0f/x\e
+
+autocmd Filetype jboss-esb noremap <silent> <buffer> <C-j> :call eclim#java#search#FindClassDeclaration()<cr>
 augroup END
 
 "Syntastic
