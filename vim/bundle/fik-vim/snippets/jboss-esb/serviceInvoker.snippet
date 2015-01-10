@@ -1,0 +1,7 @@
+	<!-- Route message to ${1:service} service -->
+	<action class="com.redpill.esb.actions.routing.ServiceInvokerAction" name="route-to-$1-service">
+		<property name="serviceCategory" value="${2:category}-${service.version}"/>
+		<property name="serviceName" value="$1"/>
+		<property name="syncSendModeTimeoutMillis" value="${3:timeout}"/>
+		<property name="logLevel" value="@default.logLevel.core@"/>
+	</action>

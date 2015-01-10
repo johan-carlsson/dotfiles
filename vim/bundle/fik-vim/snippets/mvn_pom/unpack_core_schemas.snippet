@@ -1,0 +1,19 @@
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-dependency-plugin</artifactId>
+  <executions>
+    <execution>
+      <id>unpack-core-schemas</id>
+      <phase>generate-test-sources</phase>
+      <goals>
+        <goal>unpack-dependencies</goal>
+      </goals>
+      <configuration>
+        <includeGroupIds>se.folksam.fik</includeGroupIds>
+        <includeArtifactIds>${1:service}Core-${service.version}</includeArtifactIds>
+        <outputDirectory>${project.build.directory}/test-classes</outputDirectory>
+        <includes>**/*.xsd</includes>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>

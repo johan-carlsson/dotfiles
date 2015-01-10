@@ -1,0 +1,5 @@
+	<xsl:if test="string(${1:value})">
+		<${2:field}>
+			<xsl:value-of select="formatDecoder:backendToCanonicalSSN($1)"/>
+		</$2>
+	</xsl:if>

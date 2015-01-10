@@ -1,0 +1,7 @@
+	<!-- Authentication and authorization -->
+	<action class="se.folksam.fik.esb.actions.security.FIKAuthenticationAction" name="authentication">
+		<property name="dataSource" value="java:DB2XADS"/>
+		<property name="resource" value="${1:resource}"/>
+		<property name="klass" value="@default.racf.class@"/>
+		<property name="accessRight" value="READ"/>
+	</action>
