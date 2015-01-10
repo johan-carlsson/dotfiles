@@ -181,8 +181,8 @@ augroup END
 
 " Mappings {{{
 "Window
-noremap <C-w>" :split<cr>
-noremap <C-w><bar> :vsplit<cr>
+noremap <C-w>" :belowright new<cr>
+noremap <C-w><bar> :belowright vnew<cr>
 noremap <C-w><backspace> :close<cr>
 noremap <C-w><enter> :tabnew<cr>
 
