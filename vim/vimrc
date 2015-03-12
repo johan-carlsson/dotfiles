@@ -68,7 +68,7 @@ if !has('gui_running')
 endif
 
 " Folds
-highlight Folded ctermfg=LightGray ctermbg=244
+highlight Folded ctermfg=230 ctermbg=240
 
 " Diff colours
 highlight DiffText ctermbg=LightBlue
