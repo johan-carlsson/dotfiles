@@ -156,13 +156,13 @@ let g:xml_syntax_folding=1
 
 augroup folding
     autocmd!
-    autocmd FileType xml  setlocal foldmethod=syntax foldlevel=9
-    autocmd FileType java setlocal foldmethod=syntax foldlevel=9
-    autocmd FileType ruby setlocal foldmethod=syntax foldlevel=9
-    autocmd FileType xsd  setlocal foldmethod=syntax foldlevel=9
-    autocmd FileType xslt setlocal foldmethod=syntax foldlevel=9
-    autocmd FileType xsl  setlocal foldmethod=syntax foldlevel=9
-    autocmd FileType vim  setlocal foldmethod=marker foldlevel=1
+    autocmd FileType xml  setlocal foldmethod=syntax foldlevel=6
+    autocmd FileType java setlocal foldmethod=syntax foldlevel=6
+    autocmd FileType ruby setlocal foldmethod=syntax foldlevel=6
+    autocmd FileType xsd  setlocal foldmethod=syntax foldlevel=6
+    autocmd FileType xslt setlocal foldmethod=syntax foldlevel=6
+    autocmd FileType xsl  setlocal foldmethod=syntax foldlevel=6
+    autocmd FileType vim  setlocal foldmethod=marker foldlevel=3
 augroup END
 
 " Folding }}}
