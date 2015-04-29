@@ -267,6 +267,10 @@ nnoremap <leader>s :SyntasticCheck<CR>
 " Next/previous tab
 nnoremap ]w :tabnext<CR>
 nnoremap [w :tabprevious<CR>
+
+" Focus on current fold, close the rest
+nnoremap <leader>z zMzvzz
+
 " Mappings }}}
 
 " Commands {{{
