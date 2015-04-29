@@ -225,6 +225,10 @@ nnoremap <silent> <Leader>fc :CommandTFlush<CR>
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 
+" Git grep with visual indicator
+noremap <leader>g :let @/ = expand("<cword>") \| :execute 'Ggrep ' .expand("<cword>")<CR>/<C-R>=@/<CR><CR>
+xnoremap <leader>g :<C-u>call <SID>VisualGitGrep()<CR>/<C-R>=@/<CR><CR>
+
 "Eclim
 nnoremap <Leader>jt :JUnit<CR> 
 nnoremap <Leader>jb :ProjectBuild<CR> 
@@ -353,5 +357,16 @@ function! CustomFoldText()
   return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
 endf
 " }}}
+
+" Git grep visual selection {{{
+function! s:VisualGitGrep()
+  let temp = @s
+  norm! gv"sy
+  execute 'Ggrep "' . substitute(substitute(escape(@s,'"'),"'","\'","g"),'\n','\\n','g') . '"'
+  let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+" }}}
+
 "}}}
 
