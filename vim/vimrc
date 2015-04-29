@@ -58,7 +58,7 @@ set undofile
 
 " General options }}}
 
-" Colour in terminal mode {{{
+" Colors {{{
 
 if !has('gui_running')
     "Use light background
