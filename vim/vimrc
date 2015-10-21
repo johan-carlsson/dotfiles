@@ -44,6 +44,7 @@ set ttymouse=xterm2               " Reporting the mouse position while the mouse
 
 "Autosave/Read
 autocmd BufLeave,FocusLost * silent! wall
+autocmd FocusGained,BufEnter * :silent! !
 set autowrite
 set autoread
 
