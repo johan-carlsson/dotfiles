@@ -27,6 +27,12 @@ augroup spell
     autocmd FileType xsd  setlocal spelllang=fik 
     autocmd FileType gitcommit  setlocal spell spelllang=fik 
 augroup END
+
+augroup fik_mappings
+    autocmd!
+    autocmd FileType xsd nnoremap <buffer> <localleader>t :call CaptureSystemCall("fik-xsd-to-xml.rb ". expand("%"))<CR>
+augroup END
+
 " set wildignore+=**/target/classes/**,**/target/test-classes/**,**/target/**/schema/**,**/target/**/META-INF/**
 " set wildignore+=**/target/**/*.jar,**/target/**/*.esb
 " nmap ,t :execute "normal mB" \| execute "!fik-process-resources.sh" \| execute "normal 'T" \|  execute "JUnit" \| execute "normal 'B"<CR>
