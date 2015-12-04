@@ -82,6 +82,8 @@ highlight DiffDelete ctermfg=Blue ctermbg=LightCyan
 " Search highlight
 highlight Search ctermfg=White
 
+" Match paren highlight
+highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=none
 " }}}
 
 " Plugin settings and configuration  {{{
