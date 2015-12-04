@@ -74,7 +74,7 @@ function! Fbuild()
   " echom "Project root: ". project_root
   " let result=system('fik-process-resources.sh ' . expand(project_root))
   " echom "Result of fik-process-resources: " . result
-  execute "AsyncShell fik-build " . expand(project_root)
+  execute "Dispatch! fik-build -n " . expand(project_root)
 endfunction
 
 funct! CaptureSystemCall(command)
