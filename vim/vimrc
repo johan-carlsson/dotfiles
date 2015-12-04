@@ -54,6 +54,9 @@ set backupdir=$HOME/.local/share/vim/backup
 set undodir=$HOME/.local/share/vim/undo
 set undofile
 
+" Allow per tab working dirs 
+"Ex :let t:wd = "some/directory" 
+autocmd TabEnter * if exists("t:wd") | exe "cd" t:wd | endif 
 
 
 " General options }}}
@@ -372,6 +375,14 @@ function! s:VisualGitGrep()
   let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
   let @s = temp
 endfunction
+" }}}
+
+
+" Set working dir for tab {{{
+function! SetTabDir()
+  let t:wd = getcwd()
+endfunction
+command! SetTabDir :call SetTabDir()
 " }}}
 
 "}}}
