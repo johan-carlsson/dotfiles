@@ -142,6 +142,10 @@ augroup file
   autocmd!
   autocmd BufRead,BufNewFile,BufEnter jboss-esb.xml setlocal filetype=jboss-esb syntax=xml foldmethod=syntax foldlevel=99
   autocmd BufRead,BufNewFile,BufEnter *.wsdl setlocal syntax=xml foldmethod=syntax foldlevel=99
+  " Remove : from keyword list
+  autocmd BufRead,BufNewFile,BufEnter *.xml setlocal iskeyword-=58
+  autocmd BufRead,BufNewFile,BufEnter *.xslt  setlocal iskeyword-=58
+  autocmd BufRead,BufNewFile,BufEnter *.xsd setlocal iskeyword-=58
   "Auto source vimrc files
   autocmd bufwritepost .vimrc,vimrc source $MYVIMRC
   autocmd bufwritepost .gvimrc,gvimrc source $MYGVIMRC
