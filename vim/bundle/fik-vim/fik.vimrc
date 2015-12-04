@@ -51,6 +51,10 @@ noremap <leader>gf vi"olgf
 
 " hi clear SpellCap
 " hi SpellCap cterm=underline 
+" Asciidoc
+"nmap ,a :!asciidoc -a data-uri -a icons -a iconsdir=/etc/asciidoc/images/icons %<cr>
+nmap ,a :!asciidoctor  %<cr>
+
 
 command! Ftest :call Ftest()
 function! Ftest()
