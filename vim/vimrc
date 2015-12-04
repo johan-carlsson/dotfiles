@@ -234,6 +234,8 @@ xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
 " Git grep with visual indicator
 noremap <leader>g :let @/ = expand("<cword>") \| :execute 'Ggrep ' .expand("<cword>")<CR>/<C-R>=@/<CR><CR>
 xnoremap <leader>g :<C-u>call <SID>VisualGitGrep()<CR>/<C-R>=@/<CR><CR>
+noremap <c-g> :let @/ = expand("<cword>") \| :execute 'Ggrep ' .expand("<cword>")<CR>/<C-R>=@/<CR><CR>
+xnoremap <c-g> :<C-u>call <SID>VisualGitGrep()<CR>/<C-R>=@/<CR><CR>
 
 "Eclim
 nnoremap <Leader>jt :JUnit<CR> 
