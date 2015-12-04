@@ -76,3 +76,9 @@ function! Fbuild()
   " echom "Result of fik-process-resources: " . result
   execute "AsyncShell fik-build " . expand(project_root)
 endfunction
+
+funct! CaptureSystemCall(command)
+  let @o=system(a:command)
+  echo @o
+endfunct!
+
