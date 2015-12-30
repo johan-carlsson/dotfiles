@@ -11,3 +11,6 @@ stty -ixon
 
 export LC_ALL=sv_SE.UTF-8
 export LANG=sv_SE.UTF-8
+
+#To make tmux and vim display colors correctly
+export TERM=screen-256color-bce
