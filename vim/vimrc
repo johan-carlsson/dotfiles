@@ -68,7 +68,10 @@ if !has('gui_running')
     "Use light background
     set background=dark
     " More colors in terminal 
-    set t_Co=256
+    " set t_Co=16
+    let g:solarized_contrast="normal"
+    colorscheme solarized
+    set t_ut=  " disable Background Color Erase
 endif
 
 " Folds
