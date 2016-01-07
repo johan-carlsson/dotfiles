@@ -9,4 +9,6 @@
 
 [push]
         default = current
+[color]
+	ui = true
 
