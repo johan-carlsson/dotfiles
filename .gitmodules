@@ -129,3 +129,6 @@
 [submodule "vim/bundle/vim-txum-focus-events"]
 	path = vim/bundle/vim-txum-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
+[submodule "vim/bundle/crunch.vim"]
+	path = vim/bundle/crunch.vim
+	url = https://github.com/arecarn/crunch.vim.git
