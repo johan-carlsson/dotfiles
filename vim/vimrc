@@ -141,6 +141,12 @@ nmap [h <Plug>GitGutterPrevHunk
 highlight clear SignColumn
 
 
+" Ultisnip
+let g:UltiSnipsListSnippets = "<c-l>"
+let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips" 
+let g:UltiSnipsEditSplit = "horizontal"
+
+
 "}}}
 
 " File settings{{{
