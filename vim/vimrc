@@ -107,9 +107,6 @@ let g:CommandTHighlightColor='StatusLine'
 " Clear input 
 let g:CommandTClearMap="<C-w>"
 
-"Snipmates support functions
-source $HOME/.vim/snippets/support_functions.vim
-
 "Syntastic
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby','elixir'],'passive_filetypes': ['java','xml'] }
 let g:syntastic_enable_elixir_checker = 1
@@ -268,9 +265,6 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 "Toggle background using same keyboard mapping style as unimpaired plugin
 nnoremap cob :call ToggleBackground()<cr>
-
-"Snippets
-nnoremap <Leader>sr :call ReloadAllSnippets()<cr>
 
 "Search and Replace Word under cursor
 nnoremap <leader>r ebviw"vy:%s/\<<C-R>v\>//gc<left><left><left>
