@@ -132,3 +132,6 @@
 [submodule "vim/bundle/crunch.vim"]
 	path = vim/bundle/crunch.vim
 	url = https://github.com/arecarn/crunch.vim.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
