@@ -213,14 +213,14 @@ nnoremap <leader>ve :tabedit ~/dotfiles/vim/vimrc<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
 
 "Undo tree plugin
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F6> :GundoToggle<CR>
 
 "NerdTree plugin
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :NERDTreeFind<CR>
 
 "TagList
-noremap <F6> :TlistToggle<CR>
+noremap <F5> :TlistToggle<CR>
 let Tlist_Display_Tag_Scope = 0
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Use_SingleClick = 1
@@ -399,4 +399,9 @@ command! SetTabDir :call SetTabDir()
 " }}}
 
 "}}}
+
+command! -nargs=1 Silent
+      \ | execute ':silent !'.<q-args>
+      \ | execute ':redraw!'
+
 
