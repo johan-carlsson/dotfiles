@@ -153,3 +153,6 @@
 [submodule "vim/bundle/vim-sexp"]
 	path = vim/bundle/vim-sexp
 	url = https://github.com/guns/vim-sexp.git
+[submodule "vim/bundle/vim-cljfmt"]
+	path = vim/bundle/vim-cljfmt
+	url = https://github.com/venantius/vim-cljfmt.git
