@@ -99,6 +99,7 @@ let g:EasyMotion_do_shade = 0
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['^target$','\.iml$']
 let NERDTreeMouseMode=3
+let g:NERDTreeMapHelp = 'H'
 
 let g:CommandTMaxHeight=15
 let g:CommandTMinHeight=15
