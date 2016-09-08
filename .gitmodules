@@ -156,3 +156,6 @@
 [submodule "vim/bundle/vim-cljfmt"]
 	path = vim/bundle/vim-cljfmt
 	url = https://github.com/venantius/vim-cljfmt.git
+[submodule "vim/bundle/vim-argumentative"]
+	path = vim/bundle/vim-argumentative
+	url = https://github.com/PeterRincker/vim-argumentative.git
