@@ -177,6 +177,10 @@ cp  ~/dotfiles/powerline/fonts/10-powerline-symbols.conf ~/.fonts.conf.d/
 (Click on selected font in ~/dotfiles/powerline/powerline-fonts)
 ```
 
+##Fish 
+ln -s ~/dotfiles/fish/ ~/.config/fish
+
+
 
 Logout or restart
 

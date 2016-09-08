@@ -141,3 +141,21 @@
 [submodule "vim-argumentative"]
 	path = vim-argumentative
 	url = https://github.com/PeterRincker/vim-argumentative.git
+[submodule "vim/bundle/vim-salve"]
+	path = vim/bundle/vim-salve
+	url = https://github.com/tpope/vim-salve.git
+[submodule "vim/bundle/vim-fireplace"]
+	path = vim/bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace.git
+[submodule "vim/bundle/vim-clojure-static"]
+	path = vim/bundle/vim-clojure-static
+	url = https://github.com/guns/vim-clojure-static.git
+[submodule "vim/bundle/vim-sexp-mappings-for-regular-people"]
+	path = vim/bundle/vim-sexp-mappings-for-regular-people
+	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people.git
+[submodule "vim/bundle/vim-sexp"]
+	path = vim/bundle/vim-sexp
+	url = https://github.com/guns/vim-sexp.git
+[submodule "vim/bundle/vim-cljfmt"]
+	path = vim/bundle/vim-cljfmt
+	url = https://github.com/venantius/vim-cljfmt.git
