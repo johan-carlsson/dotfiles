@@ -138,3 +138,6 @@
 [submodule "vim/bundle/vim-snippets"]
 	path = vim/bundle/vim-snippets
 	url = https://github.com/johan-carlsson/vim-snippets.git
+[submodule "vim-argumentative"]
+	path = vim-argumentative
+	url = https://github.com/PeterRincker/vim-argumentative.git
