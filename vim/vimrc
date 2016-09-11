@@ -201,6 +201,7 @@ highlight SpellLocal cterm=underline
 augroup spelling
     autocmd!
     autocmd FileType elixir setlocal spell spelllang=elixir
+    autocmd FileType elixir highlight clear SpellCap 
 augroup END
 
 " Spelling }}}
