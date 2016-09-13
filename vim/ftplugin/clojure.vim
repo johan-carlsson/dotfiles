@@ -1,1 +1,2 @@
-map <leader>e :Eval<cr>
+nmap <leader>e :Eval<cr>
+xmap <buffer> <leader>e <Plug>FireplacePrint
