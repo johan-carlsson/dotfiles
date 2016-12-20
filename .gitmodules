@@ -138,9 +138,6 @@
 [submodule "vim/bundle/vim-snippets"]
 	path = vim/bundle/vim-snippets
 	url = https://github.com/johan-carlsson/vim-snippets.git
-[submodule "vim-argumentative"]
-	path = vim-argumentative
-	url = https://github.com/PeterRincker/vim-argumentative.git
 [submodule "vim/bundle/vim-salve"]
 	path = vim/bundle/vim-salve
 	url = https://github.com/tpope/vim-salve.git
@@ -159,3 +156,9 @@
 [submodule "vim/bundle/vim-cljfmt"]
 	path = vim/bundle/vim-cljfmt
 	url = https://github.com/venantius/vim-cljfmt.git
+[submodule "vim/bundle/vim-asciidoc"]
+	path = vim/bundle/vim-asciidoc
+	url = https://github.com/dahu/vim-asciidoc.git
+[submodule "vim/bundle/VOom"]
+	path = vim/bundle/VOom
+	url = https://github.com/vim-voom/VOoM.git
