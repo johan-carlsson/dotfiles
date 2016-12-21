@@ -159,3 +159,9 @@
 [submodule "vim/bundle/vim-argumentative"]
 	path = vim/bundle/vim-argumentative
 	url = https://github.com/PeterRincker/vim-argumentative.git
+[submodule "vim/bundle/vim-asciidoc"]
+	path = vim/bundle/vim-asciidoc
+	url = https://github.com/dahu/vim-asciidoc.git
+[submodule "vim/bundle/VOom"]
+	path = vim/bundle/VOom
+	url = https://github.com/vim-voom/VOoM.git

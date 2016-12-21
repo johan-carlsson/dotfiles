@@ -201,6 +201,7 @@ highlight SpellLocal cterm=underline
 augroup spelling
     autocmd!
     autocmd FileType elixir setlocal spell spelllang=elixir
+    autocmd FileType elixir highlight clear SpellCap 
 augroup END
 
 " Spelling }}}
@@ -239,8 +240,9 @@ nnoremap <silent> <Leader>fb :CommandTBuffer<CR>
 nnoremap <silent> <Leader>ft :CommandTTag<CR>
 "Find jump
 nnoremap <silent> <Leader>fj :CommandTJump<CR>
-"Clear find
+"Flush CommandT
 nnoremap <silent> <Leader>fc :CommandTFlush<CR>
+nnoremap <silent> <Leader>fF :CommandTFlush<CR>
 
 " Search for the current selection (redux)
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
