@@ -165,3 +165,6 @@
 [submodule "vim/bundle/VOom"]
 	path = vim/bundle/VOom
 	url = https://github.com/vim-voom/VOoM.git
+[submodule "vim/bundle/vim-table-mode"]
+	path = vim/bundle/vim-table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode.git
