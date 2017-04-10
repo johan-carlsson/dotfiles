@@ -168,3 +168,6 @@
 [submodule "vim/bundle/vim-table-mode"]
 	path = vim/bundle/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule "vim/bundle/vim-markdown-preview"]
+	path = vim/bundle/vim-markdown-preview
+	url = https://github.com/JamshedVesuna/vim-markdown-preview.git
