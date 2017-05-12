@@ -171,3 +171,18 @@
 [submodule "vim/bundle/vim-markdown-preview"]
 	path = vim/bundle/vim-markdown-preview
 	url = https://github.com/JamshedVesuna/vim-markdown-preview.git
+[submodule "vim/bundle/vim-angular"]
+	path = vim/bundle/vim-angular
+	url = git://github.com/burnettk/vim-angular.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/javascript-libraries-syntax"]
+	path = vim/bundle/javascript-libraries-syntax
+	url = https://github.com/othree/javascript-libraries-syntax.vim.git
+[submodule "vim/bundle/angular-vim-snippets"]
+	path = vim/bundle/angular-vim-snippets
+	url = https://github.com/matthewsimo/angular-vim-snippets.git
+[submodule "vim/bundle/jasmine"]
+	path = vim/bundle/jasmine
+	url = https://github.com/claco/jasmine.vim.git
