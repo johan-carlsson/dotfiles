@@ -7,3 +7,5 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias cdp='cd ~/projects'
+
+alias jsonlint='python -m json.tool'
