@@ -182,3 +182,6 @@
 [submodule "vim/bundle/jasmine"]
 	path = vim/bundle/jasmine
 	url = https://github.com/claco/jasmine.vim.git
+[submodule "vim/bundle/vimwiki"]
+	path = vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
