@@ -111,6 +111,10 @@ And add this line to .bashrc or .zshrc
 source ~/dotfiles/tmux/alias
 ```
 
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 ##Ack
 ```
 ln -s ~/dotfiles/ack/ackrc ~/.ackrc
