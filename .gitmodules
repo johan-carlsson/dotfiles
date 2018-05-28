@@ -28,10 +28,6 @@
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "vim/bundle/vimwiki"]
-	path = vim/bundle/vimwiki
-	url = https://github.com/vim-scripts/vimwiki.git
-  ignore = untracked
 [submodule "vim/bundle/speeddating"]
 	path = vim/bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating
