@@ -8,3 +8,4 @@ set guioptions-=T                 " Hide toolbar.
 colorscheme solarized
 set background=light        
 let g:solarized_contrast="high"
+set guifont=Source\ Code\ Pro\ for\ Powerline:h16 
