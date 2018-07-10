@@ -185,3 +185,6 @@
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "vim/bundle/vim-parinfer"]
+	path = vim/bundle/vim-parinfer
+	url = https://github.com/bhurlow/vim-parinfer.git
