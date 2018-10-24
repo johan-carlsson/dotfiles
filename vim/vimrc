@@ -310,6 +310,9 @@ map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '>trans<'
 command! Xmllint  :%!xmllint --format --recover -
 " }}}
 
+"Jsonlint
+command! Jsonlint :%!python -m json.tool
+
 " Functions {{{
 
 "Change xml namespace prefix function {{{
