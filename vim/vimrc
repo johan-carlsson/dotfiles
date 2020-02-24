@@ -39,9 +39,11 @@ set history=1000                  " Command line history
 
 set updatetime=2000                " Time after stop typing before triggering events  
 
-set mouse=a                       " Allow mouse interaction in terminal 
+set mouse=vnc                      " Allow mouse interaction in terminal 
 
 set ttymouse=xterm2               " Reporting the mouse position while the mouse is dragged.
+
+set list
 
 "Autosave/Read
 autocmd BufLeave,FocusLost * silent! wall
@@ -66,11 +68,13 @@ autocmd TabEnter * if exists("t:wd") | exe "cd" t:wd | endif
 
 if !has('gui_running')
     "Use light background
-    set background=dark
+    set background=light
     " More colors in terminal 
     " set t_Co=16
+    let g:solarized_termcolors=256
     let g:solarized_contrast="normal"
     colorscheme solarized
+    hi Normal ctermbg=none
     set t_ut=  " disable Background Color Erase
 endif
 
@@ -84,7 +88,7 @@ highlight DiffChange ctermbg=LightCyan
 highlight DiffDelete ctermfg=Blue ctermbg=LightCyan
 
 " Search highlight
-highlight Search ctermfg=White
+" highlight Search ctermfg=White
 
 " Match paren highlight
 highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=none
@@ -108,6 +112,7 @@ let g:CommandTHighlightColor='StatusLine'
 
 " Clear input 
 let g:CommandTClearMap="<C-w>"
+let g:CommandTWildIgnore=&wildignore . ",*/target/*"
 
 "Syntastic
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby','elixir'],'passive_filetypes': ['java','xml'] }
@@ -309,6 +314,7 @@ map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '>trans<'
 "Xmllint
 command! Xmllint  :%!xmllint --format --recover -
 " }}}
+
 
 "Jsonlint
 command! Jsonlint :%!python -m json.tool
